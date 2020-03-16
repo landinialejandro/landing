@@ -73,7 +73,7 @@ include("header.php");
             <h5 class="card-title">Tu Negocio Web!</h5>
             <br>
             <p class="card-text">
-              Aplicacion desarrollada de facturación para argentina, adapatación personalizada para cada tipo de
+              Aplicación desarrollada de facturación para argentina, adpatación personalizada para cada tipo de
               negocio.
               Vos dedicate a tus negocios, tunegocioweb te hace el resto más fácil. <br>
               Facturación online, control de inventario, de clientes, de proveedores, o simplemente facturas lo
@@ -97,7 +97,7 @@ include("header.php");
             <h5 class="card-title">Sistema Plus!</h5>
             <br>
             <p class="card-text">
-              Sistema propietario, desarrollado para para medianas empresas, gestion de presupuesto, pedido de
+              Sistema propietario, desarrollado para medianas empresas, gestión de presupuesto, pedido de
               compras, control de inventario.
               Gestión de documentos, recibos, cobranzas. <br>
               <i class="fas fa-star text-warning"></i> Versión disponible para laboratorios de metrología y
@@ -123,8 +123,8 @@ include("header.php");
           <div class="card-body">
             <h6 class="card-title">Herramienta para desarrolladores</h6>
 
-            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong> , practicamente sin
-              codificar nada, instale, activel el plugin y disfrute!</p>
+            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
+              codificar nada, instale, active el plugin y disfrute!</p>
 
             <h3>+<span id="counter1" data-visit="3801">0</span> visitas!</h3>
             <div class="col-sm-12">
@@ -151,7 +151,7 @@ include("header.php");
             <h6 class="card-title">Herramienta para desarrolladores</h6>
 
             <p class="card-text">Integre a sus sistemas creado en AppGini la posibilidad de mostrar en la barra
-              del menu
+              del menú
               una imagen del usuario. Totalmente configurable y actualizable desde la ventana del perfil de
               usuario,
               agregue valor a sus aplicaciones. Plugin ready, instale, active el plugin y disfrute!</p>
