@@ -223,9 +223,21 @@ include("header.php");
                     </div>
                   </div>
                   <div class="form-group row">
+                    <label for="inputEmpresa" class="col-sm-2 col-form-label">Empresa</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputName2" placeholder="Empresa">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPosicion" class="col-sm-2 col-form-label">Posición</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputName2" placeholder="Posición">
+                    </div>
+                  </div>
+                  <div class="form-group row">
                     <label for="inputExperience" class="col-sm-2 col-form-label">Comentarios</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                      <textarea class="form-control" id="inputExperience" placeholder="Comentarios"></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
