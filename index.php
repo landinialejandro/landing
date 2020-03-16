@@ -121,15 +121,15 @@ include("header.php");
             <h5 class="card-title m-0">Landini Admin Template</h5>
           </div>
           <div class="card-body">
-            <h6 class="card-title">Herramineta para desarrolladores</h6>
+            <h6 class="card-title">Herramienta para desarrolladores</h6>
 
-            <p class="card-text">Diseñada para desarroladores de AppGini, <strong>plugin ready</strong> , practicamente sin
+            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong> , practicamente sin
               codificar nada, instale, activel el plugin y disfrute!</p>
 
             <h3>+<span id="counter1" data-visit="3801">0</span> visitas!</h3>
             <div class="col-sm-12">
-              <a href="products/lat/img/forum.png?text=1" data-toggle="lightbox" TweenMax data-gallery="gallery">
-                <img src="products/lat/img/forum.png" class="img-fluid mb-2" alt="forum">
+              <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum"  data-gallery="gallery">
+                <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
               </a>
             </div>
           </div>
@@ -148,7 +148,7 @@ include("header.php");
             <h5 class="card-title m-0">Membership profile image</h5>
           </div>
           <div class="card-body">
-            <h6 class="card-title">Herramineta para desarrolladores</h6>
+            <h6 class="card-title">Herramienta para desarrolladores</h6>
 
             <p class="card-text">Integre a sus sistemas creado en AppGini la posibilidad de mostrar en la barra
               del menu
@@ -157,8 +157,8 @@ include("header.php");
               agregue valor a sus aplicaciones. Plugin ready, instale, active el plugin y disfrute!</p>
             <h3>+<span id="counter2" data-visit="4258">0</span> visitas!</h3>
             <div class="col-sm-12">
-              <a href="products/mpi/img/forum.png?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
-                <img src="products/mpi/img/forum.png" class="img-fluid mb-2" alt="forum">
+              <a href="products/mpi/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
+                <img src="products/mpi/img/forum.PNG" class="img-fluid mb-2" alt="forum">
               </a>
             </div>
           </div>

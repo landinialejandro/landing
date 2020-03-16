@@ -28,7 +28,7 @@ include("header.php");
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
-              <img class="profile-user-img img-fluid img-circle" src="dist/img/face.png" alt="User profile picture">
+              <img class="profile-user-img img-fluid img-circle" src="dist/img/Face.png" alt="User Avatar">
             </div>
 
             <h3 class="profile-username text-center">Alejandro Landini</h3>
