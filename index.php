@@ -128,7 +128,7 @@ include("header.php");
 
             <h3>+<span id="counter1" data-visit="3801">0</span> visitas!</h3>
             <div class="col-sm-12">
-              <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum"  data-gallery="gallery">
+              <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
               </a>
             </div>
