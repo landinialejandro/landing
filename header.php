@@ -8,10 +8,7 @@
 
   <title>Landini</title>
   <link id="browser_favicon" rel="shortcut icon" href="logo.png">
-
-  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="stylesheet" href="dist/plugins/ekko-lightbox/ekko-lightbox.css">
 
