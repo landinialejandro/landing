@@ -191,9 +191,7 @@ include("footer.php");
       onUpdate: function() {
         var number = Math.ceil(counter.var);
         objeto.html(number);
-        if (number === counter.var) {
-          return;
-        }
+        if (number === counter.var) { return; }
       },
       ease: Circ.easeOut
     });
@@ -203,6 +201,7 @@ include("footer.php");
     //console.log("¿Elemento %s está visible?: %s", objeto, visible);
     if (visible) { count($(objeto)); }
   }
+  
   $(function() {
     $(".counter").each(function(){
       cambiaVisibilidad(true, this);
