@@ -40,23 +40,23 @@ include("header.php");
               <div class="row">
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header">122</h5>
-                    <span class="description-text">SALES</span>
+                    <h5 class="description-header"><span class="counter" id="counter-sales" data-endvalue="122">0</span></h5>
+                    <span class="description-text">VENTAS</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header">96</h5>
-                    <span class="description-text">FOLLOWERS</span>
+                    <h5 class="description-header"><span class="counter" id="counter-followers" data-endvalue="96">0</span></h5>
+                    <span class="description-text">SEGUIDORES</span>
                   </div>
                   <!-- /.description-block -->
                 </div>
                 <!-- /.col -->
                 <div class="col-sm-4">
                   <div class="description-block">
-                    <h5 class="description-header">6</h5>
+                    <h5 class="description-header"><span class="counter" id="counter-productos" data-endvalue="6">0</span></h5>
                     <span class="description-text">PRODUCTOS</span>
                   </div>
                   <!-- /.description-block -->
@@ -126,7 +126,7 @@ include("header.php");
             <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
               codificar nada, instale, active el plugin y disfrute!</p>
 
-            <h3>+<span id="counter1" data-visit="3801">0</span> visitas!</h3>
+            <h3>+<span class="counter" id="counter-lat" data-endvalue="3801">0</span> visitas!</h3>
             <div class="col-sm-12">
               <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
@@ -150,12 +150,12 @@ include("header.php");
           <div class="card-body">
             <h6 class="card-title">Herramienta para desarrolladores</h6>
 
-            <p class="card-text">Integre a sus sistemas creado en AppGini la posibilidad de mostrar en la barra
-              del menú
-              una imagen del usuario. Totalmente configurable y actualizable desde la ventana del perfil de
-              usuario,
-              agregue valor a sus aplicaciones. Plugin ready, instale, active el plugin y disfrute!</p>
-            <h3>+<span id="counter2" data-visit="4258">0</span> visitas!</h3>
+            <p class="card-text">Integre, a sus sistemas creado en AppGini, la posibilidad de mostrar en la barra
+              del menú una imagen del usuario. <br>
+              Totalmente configurable y actualizable desde la ventana del perfil de
+              usuario, agregue valor a sus aplicaciones. <br>
+              Plugin ready, instale, active el plugin y disfrute!</p>
+            <h3>+<span class="counter" id="counter-mpi" data-endvalue="4258">0</span> visitas!</h3>
             <div class="col-sm-12">
               <a href="products/mpi/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/mpi/img/forum.PNG" class="img-fluid mb-2" alt="forum">
@@ -184,12 +184,10 @@ include("footer.php");
 <script>
   //https://www.bufa.es/javascript-contador-numerico-con-animacion/
   function count(objeto) {
-    var contador = objeto.data('visit');
-    var counter = {
-      var: contador - 3000
-    };
+    var contador = objeto.data('endvalue');
+    var counter = {var: contador / 1.008};
     TweenMax.to(counter, 4, {
-      var: objeto.data('visit'),
+      var: contador,
       onUpdate: function() {
         var number = Math.ceil(counter.var);
         objeto.html(number);
@@ -203,17 +201,12 @@ include("footer.php");
 
   function cambiaVisibilidad(visible, objeto) {
     //console.log("¿Elemento %s está visible?: %s", objeto, visible);
-    if (visible) {
-      count($(objeto));
-    }
+    if (visible) { count($(objeto)); }
   }
   $(function() {
-    var miDiv = document.getElementById("counter1");
-    count($(miDiv));
-    inViewportTotally(miDiv, cambiaVisibilidad);
-
-    miDiv = document.getElementById("counter2");
-    count($(miDiv));
-    inViewportTotally(miDiv, cambiaVisibilidad);
+    $(".counter").each(function(){
+      cambiaVisibilidad(true, this);
+      inViewportTotally(document.getElementById(this.id), cambiaVisibilidad);
+    })
   });
 </script>
