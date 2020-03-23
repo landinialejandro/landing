@@ -17,22 +17,42 @@
     include("footer.php");
     ?>
     <script>
-        $.fn
-            .extend({
-                visible: function() {
-                    return estaEnPantalla($(this))
-                },
-                mcounter: function(){
-                    var h = $(this);
-                    h.hide();
-                    h.wrap('<span class="counter" id="counter-'+ h.attr('id') +'" data-endvalue="'+h.val()+'">0</span>');
-                },
-                anterior: function(){
-                    return estaEnPantalla($(this))
+ (function ($) {
+    var defaults = {
+        callback: function () { },
+        runOnLoad: true,
+        frequency: 100,
+        previousVisibility : null
+    };
+
+    var methods = {};
+    methods.checkVisibility = function (element, options) {
+            if (jQuery.contains(document, element[0])) {
+                var previousVisibility = options.previousVisibility;
+                var isVisible = methods.isInScreen(element);
+                options.previousVisibility = isVisible;
+                var initialLoad = previousVisibility === null;
+
+                if (initialLoad) {
+
+                    //el elelmento está visible y es la primera vez qeu se ejecuta!
+
+                    if (options.runOnLoad) {
+                        //llama a la función callback
+                        options.callback(element, isVisible, initialLoad);
+                    }
+                } else if (previousVisibility !== isVisible) {
+                    options.callback(element, isVisible, initialLoad);
                 }
-            });
-        
-        function estaEnPantalla(e) {
+
+                setTimeout(function() {
+                    methods.checkVisibility(element, options);
+                }, options.frequency);
+
+            }
+        }
+        methods.isInScreen = function (e) {
+
             var estaEnPantalla = false;
             var posicionElemento = e.get(0).getBoundingClientRect();
             if (posicionElemento.top >= 0 && posicionElemento.left >= 0 &&
@@ -41,7 +61,44 @@
                 estaEnPantalla = true;
             }
             return estaEnPantalla;
+            //    return true;
         }
+
+    $.fn.visibilityChanged = function (options) {
+        var settings = $.extend({}, defaults, options);
+        return this.each(function () {
+            methods.checkVisibility($(this), settings);
+        });
+    };
+})(jQuery);
+
+
+
+        // $.fn
+        //     .extend({
+        //         visible: function() {
+        //             return estaEnPantalla($(this))
+        //         },
+        //         mcounter: function(){
+        //             var h = $(this);
+        //             h.hide();
+        //             h.wrap('<span class="counter" id="counter-'+ h.attr('id') +'" data-endvalue="'+h.val()+'">0</span>');
+        //         },
+        //         anterior: function(){
+        //             return estaEnPantalla($(this))
+        //         }
+        //     });
+        
+        // function estaEnPantalla(e) {
+        //     var estaEnPantalla = false;
+        //     var posicionElemento = e.get(0).getBoundingClientRect();
+        //     if (posicionElemento.top >= 0 && posicionElemento.left >= 0 &&
+        //         posicionElemento.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        //         posicionElemento.right <= (window.innerWidth || document.documentElement.clientWidth)) {
+        //         estaEnPantalla = true;
+        //     }
+        //     return estaEnPantalla;
+        // }
 
         function count(objeto) {
             //https://www.bufa.es/javascript-contador-numerico-con-animacion/
@@ -62,13 +119,24 @@
             });
         }
 
-        $('#sales').mcounter();
-        $(document).on('scroll click load resize', function() {
-            $(".counter").each(function() { 
-                var o = $(this);
-                if (o.visible()) {
-                    count(o);
-                }
-            })
+        //$('#sales').mcounter();
+        $("#sales").visibilityChanged({
+            callback: function(element, visible, initialLoad) {
+                // do something
+                //var o = $(this);
+                //count(o);
+                console.log("visible?");
+            }
         });
+        // $(document).on('scroll click load resize', function() {
+        //     $(".counter").each(function() { 
+        //         var o = $(this);
+        //         if (o.visible()) {
+        //             count(o);
+        //         }
+        //     })
+        // });
+        $(function(){
+            $("#sales").visibilityChanged();
+        })
     </script>
