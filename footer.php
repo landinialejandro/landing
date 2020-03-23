@@ -23,8 +23,9 @@
   <script src="dist/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
   <script src="dist/js/adminlte.min.js"></script>
   <script src="dist/plugins/filterizr/jquery.filterizr.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
-  <script src="dist/plugins/isVisible/DetectarVisibilidad.js"></script>
+  <script src="dist/plugins/TweenMax/TweenMax.min.js"></script>
+  <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+  
 
   <script>
   $(function () {

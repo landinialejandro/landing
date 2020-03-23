@@ -183,6 +183,43 @@ include("footer.php");
 ?>
 <script>
   //https://www.bufa.es/javascript-contador-numerico-con-animacion/
+
+$.fn
+.extend({
+  visible: function(){
+    //var anteriorVisibilidad = isElementPartiallyVisible_($(this));    //crea una clausura para el manejador de este evento concreto
+    
+    //Asocio esta función interna a los diversos eventos que podrían producir un cambio en la visibilidad
+    window.addEventListener("load", detectarPosibleCambio_);
+    window.addEventListener("resize", detectarPosibleCambio_);
+    window.addEventListener("scroll", detectarPosibleCambio_);
+  }
+})
+.bind("ahoraVisible, load, resize, scroll", function(e, obj){
+  count($(e.data.obj))
+});
+
+function detectarPosibleCambio_() {
+        var esVisible = isElementPartiallyVisible_($(this));
+        if (esVisible != anteriorVisibilidad) { //ha cambiado el estado de visibilidad del elemento
+            anteriorVisibilidad = esVisible;
+            if (esVisible){
+              $.fn.trigger('ahoraVisible',[this]);
+            }
+        }
+}
+
+function isElementPartiallyVisible_(e) {
+    var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
+    var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
+    //Posición de la caja del elemento
+    var cajaDentroH = (e.offset().left >= 0 && e.offset().left <= anchoViewport) ||
+                      (e.offset().right >= 0 && e.offset().right <= anchoViewport);
+    var cajaDentroV = (e.offset().top >= 0 && e.offset().top <= alturaViewport) ||  
+                      (e.offset().bottom>= 0 && e.offset().bottom <= alturaViewport);  
+    return (cajaDentroH && cajaDentroV);
+}
+
   function count(objeto) {
     var contador = objeto.data('endvalue');
     var counter = {var: contador / 1.008};
@@ -204,8 +241,12 @@ include("footer.php");
   
   $(function() {
     $(".counter").each(function(){
-      cambiaVisibilidad(true, this);
-      inViewportTotally(document.getElementById(this.id), cambiaVisibilidad);
+      //console.log($(this).visible());
+      if ($(this).visible()){
+        count($(this));
+      }
+      //cambiaVisibilidad(true, this);
+      //inViewportTotally(document.getElementById(this.id), cambiaVisibilidad);
     })
   });
 </script>
