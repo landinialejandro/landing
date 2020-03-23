@@ -64,17 +64,11 @@
 
         $('#sales').mcounter();
         $(document).on('scroll click load resize', function() {
-            in_v_port(this);
-        });
-
-        (function in_v_port(){
             $(".counter").each(function() { 
                 var o = $(this);
-                o.anterior();
-                if (o.visible() !== o.anterior() ) {
+                if (o.visible()) {
                     count(o);
-                   
                 }
             })
-        })()
+        });
     </script>
