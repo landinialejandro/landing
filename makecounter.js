@@ -54,20 +54,20 @@
                 ease: Circ.easeOut
             });
         }
-    }
+    };
     $.fn.visibilityChanged = function(options) {
         return this.each(function() {
             var $this = $(this);
             var settings = $.extend({}, defaults,$this.data(), options);
             methods.checkVisibility($this, settings);
         });
-    }
+    };
     $.fn.mcounter = function(options) { //make counter as constructor, take the element and replace this with a span tag
         var settings = $.extend({}, defaults, options);
         var res = [];
         $.each(options, function(k,v){
             res.push(`data-${k}="${v}"`);
-        })
+        });
         $(this).hide().wrap(`<span class="counter" ${res.join(' ')}>0</span>`);
-    }
+    };
 })(jQuery);
