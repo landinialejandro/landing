@@ -1,6 +1,41 @@
-(function($) {
+/**
+ * @file makecounter.js is small conotrl to animate counter
+ * @author Alejandro Landini landini.com.ar
+ * @version 1.0
+ * @copyright © 2020 Alejandro Landini
+ * @licence MIT (see LICENCE file)
+ * @name makecounter
+ * @type  jQuery
+ * @tutorial:
+ *   This control has two functions:
+ *   $(element).mcounter(); is the js constructor that allows to reform any element in an animated counter. option values can be passed to it.
+ *   $('.counter').visibilityChanged (); 
+ *   This second method activates the counters on the screen, if these are visible, the counter starts. option values can be passed to it.
+ * 
+ * @param {Boolean} runOnLoad - true start counter is visible on load page
+ * @param {Number} frequency - 100ms, time to check if the control chague vsibility
+ * @param {Number} startcountvalue - start count value in counter
+ * @param {Number} endcountvalue - end count value in counter
+ * @param {Number} elapsetime -in seconds, elapse time to finish count
+ * 
+ * 
+ * @example <caption>Simple usage example:</caption>
+ *          $('#sales').mcounter({
+ *               endcountvalue: 4002,
+ *               startcountvalue: 3995,
+ *               elapsetime:8
+ *           });
+ * 
+ *           $('.counter').visibilityChanged({
+ *               callback: function(element, visible, initialLoad) {
+ *                   // do something
+ *                   console.log("visible?: " + visible);
+ *            });
+ * 
+ */
+(function ($) {
     var defaults = {
-        callback: function() {},
+        callback: function () {},
         runOnLoad: true,
         frequency: 100,
         previousVisibility: null,
@@ -10,9 +45,9 @@
     };
 
     var methods = {
-        checkVisibility: function(element, options) {
+        checkVisibility: function (element, options) {
             if (jQuery.contains(document, element[0])) {
-                var previousVisibility = options.previousVisibility; 
+                var previousVisibility = options.previousVisibility;
                 var isVisible = methods.isInScreen(element); //get the element visibility
                 options.previousVisibility = isVisible; //set the element visibility
                 var initialLoad = previousVisibility === null; //check if initial load
@@ -27,12 +62,12 @@
                     options.callback(element, isVisible, initialLoad);
                 }
                 options.frequency = options.frequency < 100 ? 100 : options.frequency;
-                setTimeout(function() {
+                setTimeout(function () {
                     methods.checkVisibility(element, options);
                 }, options.frequency);
             }
         },
-        isInScreen: function(e) {
+        isInScreen: function (e) {
             var isOnScreen = false;
             var elementPosition = e.get(0).getBoundingClientRect();
             if (elementPosition.top >= 0 && elementPosition.left >= 0 &&
@@ -42,30 +77,34 @@
             }
             return isOnScreen;
         },
-        count: function(element, options) {
-            var counter = {var: options.startcountvalue };
+        count: function (element, options) {
+            var counter = {
+                var: options.startcountvalue
+            };
             TweenMax.to(counter, options.elapsetime, {
                 var: options.endcountvalue,
-                onUpdate: function() {
+                onUpdate: function () {
                     var number = Math.ceil(counter.var);
                     element.text(number);
-                    if (number === counter.var) { return;}
+                    if (number === counter.var) {
+                        return;
+                    }
                 },
                 ease: Circ.easeOut
             });
         }
     };
-    $.fn.visibilityChanged = function(options) {
-        return this.each(function() {
+    $.fn.visibilityChanged = function (options) {
+        return this.each(function () {
             var $this = $(this);
-            var settings = $.extend({}, defaults,$this.data(), options);
+            var settings = $.extend({}, defaults, $this.data(), options);
             methods.checkVisibility($this, settings);
         });
     };
-    $.fn.mcounter = function(options) { //make counter as constructor, take the element and replace this with a span tag
+    $.fn.mcounter = function (options) { //make counter as constructor, take the element and replace this with a span tag
         var settings = $.extend({}, defaults, options);
         var res = [];
-        $.each(options, function(k,v){
+        $.each(options, function (k, v) {
             res.push(`data-${k}="${v}"`);
         });
         $(this).hide().wrap(`<span class="counter" ${res.join(' ')}>0</span>`);
