@@ -18,6 +18,9 @@
  * @param {Number} endcountvalue - end count value in counter
  * @param {Number} elapsetime -in seconds, elapse time to finish count
  * 
+ * @requires llibrary 
+ * <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+ * <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
  * 
  * @example <caption>Simple usage example:</caption>
  *          $('#sales').mcounter({

@@ -6,16 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
     <h1>last Version 4000</h1>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <input name="valor" id="sales" value="3801">
     <br><br><br><br><br>
     <h3>+<span class="counter" id="counter-lat" data-endcountvalue="3801">0</span> visitas!</h3>
-
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
     <footer class="main-footer">
         <div class="float-right d-none d-sm-inline">
             <strong> Potenciado por: <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
