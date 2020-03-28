@@ -8,135 +8,111 @@
 </head>
 
 <body>
+    <h1>last Version 4000</h1>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <input name="valor" id="sales" value="3801">
-    <h3>+<span class="counter" id="counter-lat" data-endvalue="3801">0</span> visitas!</h3>
+    <br><br><br><br><br>
+    <h3>+<span class="counter" id="counter-lat" data-endcountvalue="3801">0</span> visitas!</h3>
 
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <?php
-    include("footer.php");
-    ?>
+
+    <footer class="main-footer">
+        <div class="float-right d-none d-sm-inline">
+            <strong> Potenciado por: <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </div>
+        Anything you want
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script>
- (function ($) {
-    var defaults = {
-        callback: function () { },
-        runOnLoad: true,
-        frequency: 100,
-        previousVisibility : null
-    };
-
-    var methods = {};
-    methods.checkVisibility = function (element, options) {
-            if (jQuery.contains(document, element[0])) {
-                var previousVisibility = options.previousVisibility;
-                var isVisible = methods.isInScreen(element);
-                options.previousVisibility = isVisible;
-                var initialLoad = previousVisibility === null;
-
-                if (initialLoad) {
-
-                    //el elelmento está visible y es la primera vez qeu se ejecuta!
-
-                    if (options.runOnLoad) {
-                        //llama a la función callback
-                        options.callback(element, isVisible, initialLoad);
-                    }
-                } else if (previousVisibility !== isVisible) {
-                    options.callback(element, isVisible, initialLoad);
-                }
-
-                setTimeout(function() {
-                    methods.checkVisibility(element, options);
-                }, options.frequency);
-
-            }
-        }
-        methods.isInScreen = function (e) {
-
-            var estaEnPantalla = false;
-            var posicionElemento = e.get(0).getBoundingClientRect();
-            if (posicionElemento.top >= 0 && posicionElemento.left >= 0 &&
-                posicionElemento.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                posicionElemento.right <= (window.innerWidth || document.documentElement.clientWidth)) {
-                estaEnPantalla = true;
-            }
-            return estaEnPantalla;
-            //    return true;
-        }
-
-    $.fn.visibilityChanged = function (options) {
-        var settings = $.extend({}, defaults, options);
-        return this.each(function () {
-            methods.checkVisibility($(this), settings);
-        });
-    };
-})(jQuery);
-
-
-
-        // $.fn
-        //     .extend({
-        //         visible: function() {
-        //             return estaEnPantalla($(this))
-        //         },
-        //         mcounter: function(){
-        //             var h = $(this);
-        //             h.hide();
-        //             h.wrap('<span class="counter" id="counter-'+ h.attr('id') +'" data-endvalue="'+h.val()+'">0</span>');
-        //         },
-        //         anterior: function(){
-        //             return estaEnPantalla($(this))
-        //         }
-        //     });
-        
-        // function estaEnPantalla(e) {
-        //     var estaEnPantalla = false;
-        //     var posicionElemento = e.get(0).getBoundingClientRect();
-        //     if (posicionElemento.top >= 0 && posicionElemento.left >= 0 &&
-        //         posicionElemento.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        //         posicionElemento.right <= (window.innerWidth || document.documentElement.clientWidth)) {
-        //         estaEnPantalla = true;
-        //     }
-        //     return estaEnPantalla;
-        // }
-
-        function count(objeto) {
-            //https://www.bufa.es/javascript-contador-numerico-con-animacion/
-            var contador = objeto.data('endvalue');
-            var counter = {
-                var: contador / 1.008
+        (function($) {
+            var defaults = {
+                callback: function() {},
+                runOnLoad: true,
+                frequency: 100,
+                previousVisibility: null,
+                startcountvalue: 0, //start count value in counter
+                endcountvalue: 3000, //end count value in counter
+                elapsetime: 4 //in seconds
             };
-            TweenMax.to(counter, 4, {
-                var: contador,
-                onUpdate: function() {
-                    var number = Math.ceil(counter.var);
-                    objeto.html(number);
-                    if (number === counter.var) {
-                        return;
+
+            var methods = {
+                checkVisibility: function(element, options) {
+                    if (jQuery.contains(document, element[0])) {
+                        var previousVisibility = options.previousVisibility; 
+                        var isVisible = methods.isInScreen(element); //get the element visibility
+                        options.previousVisibility = isVisible; //set the element visibility
+                        var initialLoad = previousVisibility === null; //check if initial load
+                        if (initialLoad) {
+                            //the element is visible and is the first time in load is user option is true
+                            if (options.runOnLoad) {
+                                if (isVisible) methods.count(element, options);
+                                options.callback(element, isVisible, initialLoad);
+                            }
+                        } else if (previousVisibility !== isVisible) {
+                            if (isVisible) methods.count(element, options);
+                            options.callback(element, isVisible, initialLoad);
+                        }
+                        options.frequency = options.frequency < 100 ? 100 : options.frequency;
+                        setTimeout(function() {
+                            methods.checkVisibility(element, options);
+                        }, options.frequency);
                     }
                 },
-                ease: Circ.easeOut
-            });
-        }
-
-        //$('#sales').mcounter();
-        $("#sales").visibilityChanged({
-            callback: function(element, visible, initialLoad) {
-                // do something
-                //var o = $(this);
-                //count(o);
-                console.log("visible?");
+                isInScreen: function(e) {
+                    var isOnScreen = false;
+                    var elementPosition = e.get(0).getBoundingClientRect();
+                    if (elementPosition.top >= 0 && elementPosition.left >= 0 &&
+                        elementPosition.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        elementPosition.right <= (window.innerWidth || document.documentElement.clientWidth)) {
+                        isOnScreen = true;
+                    }
+                    return isOnScreen;
+                },
+                count: function(element, options) {
+                    var counter = {var: options.startcountvalue };
+                    TweenMax.to(counter, options.elapsetime, {
+                        var: options.endcountvalue,
+                        onUpdate: function() {
+                            var number = Math.ceil(counter.var);
+                            element.text(number);
+                            if (number === counter.var) { return;}
+                        },
+                        ease: Circ.easeOut
+                    });
+                }
             }
-        });
-        // $(document).on('scroll click load resize', function() {
-        //     $(".counter").each(function() { 
-        //         var o = $(this);
-        //         if (o.visible()) {
-        //             count(o);
-        //         }
-        //     })
-        // });
-        $(function(){
-            $("#sales").visibilityChanged();
+            $.fn.visibilityChanged = function(options) {
+                return this.each(function() {
+                    var $this = $(this);
+                    var settings = $.extend({}, defaults,$this.data(), options);
+                    methods.checkVisibility($this, settings);
+                });
+            }
+            $.fn.mcounter = function(options) { //make counter as constructor, take the element and replace this with a span tag
+                var settings = $.extend({}, defaults, options);
+                var res = [];
+                $.each(options, function(k,v){
+                    res.push(`data-${k}="${v}"`);
+                })
+                $(this).hide().wrap(`<span class="counter" ${res.join(' ')}>0</span>`);
+            }
+        })(jQuery);
+
+        $(function() {
+            $('#sales').mcounter({
+                endcountvalue: 4002,
+                startcountvalue: 3995,
+                elapsetime:8
+            });
+            $('.counter').visibilityChanged({
+                callback: function(element, visible, initialLoad) {
+                    // do something
+                    console.log("visible?: " + visible);
+                }
+            });
         })
     </script>
+</body>
+
+</html>

@@ -12,7 +12,7 @@
             var previousVisibility = options.previousVisibility;
             var isVisible = element.is(':visible');
             options.previousVisibility = isVisible;
-            var initialLoad = previousVisibility == null
+            var initialLoad = previousVisibility === null;
             if (initialLoad) {
                 if (options.runOnLoad) {
                     options.callback(element, isVisible, initialLoad);
