@@ -24,7 +24,7 @@
   <script src="dist/js/adminlte.min.js"></script>
   <script src="dist/plugins/filterizr/jquery.filterizr.min.js"></script>
   <script src="dist/plugins/TweenMax/TweenMax.min.js"></script>
-  <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+  <script src="dist/plugins/l-makecounter/l-makecounter.min.js"></script>
   
 
   <script>

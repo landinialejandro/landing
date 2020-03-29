@@ -40,7 +40,7 @@ include("header.php");
               <div class="row">
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header"><span class="counter" id="counter-sales" data-endvalue="122">0</span></h5>
+                    <h5 class="description-header"><span class="counter" id="counter-sales" data-elapsetime="8" data-startcountvalue="199" data-endcountvalue="122">0</span></h5>
                     <span class="description-text">VENTAS</span>
                   </div>
                   <!-- /.description-block -->
@@ -48,7 +48,7 @@ include("header.php");
                 <!-- /.col -->
                 <div class="col-sm-4 border-right">
                   <div class="description-block">
-                    <h5 class="description-header"><span class="counter" id="counter-followers" data-endvalue="96">0</span></h5>
+                    <h5 class="description-header"><span class="counter" id="counter-followers" data-elapsetime="8" data-startcountvalue="88" data-endcountvalue="96">0</span></h5>
                     <span class="description-text">SEGUIDORES</span>
                   </div>
                   <!-- /.description-block -->
@@ -56,7 +56,7 @@ include("header.php");
                 <!-- /.col -->
                 <div class="col-sm-4">
                   <div class="description-block">
-                    <h5 class="description-header"><span class="counter" id="counter-productos" data-endvalue="6">0</span></h5>
+                    <h5 class="description-header"><span class="counter" id="counter-productos" data-elapsetime="8" data-startcountvalue="4" data-endcountvalue="7">0</span></h5>
                     <span class="description-text">PRODUCTOS</span>
                   </div>
                   <!-- /.description-block -->
@@ -126,7 +126,7 @@ include("header.php");
             <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
               codificar nada, instale, active el plugin y disfrute!</p>
 
-            <h3>+<span class="counter" id="counter-lat" data-endvalue="3801">0</span> visitas!</h3>
+            <h3>+<span class="counter" id="counter-lat" data-endcountvalue="3801">0</span> visitas!</h3>
             <div class="col-sm-12">
               <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
@@ -155,7 +155,7 @@ include("header.php");
               Totalmente configurable y actualizable desde la ventana del perfil de
               usuario, agregue valor a sus aplicaciones. <br>
               Plugin ready, instale, active el plugin y disfrute!</p>
-            <h3>+<span class="counter" id="counter-mpi" data-endvalue="4258">0</span> visitas!</h3>
+            <h3>+<span class="counter" id="counter-mpi" data-endcountvalue="4258">0</span> visitas!</h3>
             <div class="col-sm-12">
               <a href="products/mpi/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/mpi/img/forum.PNG" class="img-fluid mb-2" alt="forum">
@@ -181,72 +181,3 @@ include("header.php");
 <?php
 include("footer.php");
 ?>
-<script>
-  //https://www.bufa.es/javascript-contador-numerico-con-animacion/
-
-$.fn
-.extend({
-  visible: function(){
-    //var anteriorVisibilidad = isElementPartiallyVisible_($(this));    //crea una clausura para el manejador de este evento concreto
-    
-    //Asocio esta función interna a los diversos eventos que podrían producir un cambio en la visibilidad
-    window.addEventListener("load", detectarPosibleCambio_);
-    window.addEventListener("resize", detectarPosibleCambio_);
-    window.addEventListener("scroll", detectarPosibleCambio_);
-  }
-})
-.bind("ahoraVisible, load, resize, scroll", function(e, obj){
-  count($(e.data.obj))
-});
-
-function detectarPosibleCambio_() {
-        var esVisible = isElementPartiallyVisible_($(this));
-        if (esVisible != anteriorVisibilidad) { //ha cambiado el estado de visibilidad del elemento
-            anteriorVisibilidad = esVisible;
-            if (esVisible){
-              $.fn.trigger('ahoraVisible',[this]);
-            }
-        }
-}
-
-function isElementPartiallyVisible_(e) {
-    var anchoViewport = window.innerWidth || document.documentElement.clientWidth;
-    var alturaViewport = window.innerHeight || document.documentElement.clientHeight;
-    //Posición de la caja del elemento
-    var cajaDentroH = (e.offset().left >= 0 && e.offset().left <= anchoViewport) ||
-                      (e.offset().right >= 0 && e.offset().right <= anchoViewport);
-    var cajaDentroV = (e.offset().top >= 0 && e.offset().top <= alturaViewport) ||  
-                      (e.offset().bottom>= 0 && e.offset().bottom <= alturaViewport);  
-    return (cajaDentroH && cajaDentroV);
-}
-
-  function count(objeto) {
-    var contador = objeto.data('endvalue');
-    var counter = {var: contador / 1.008};
-    TweenMax.to(counter, 4, {
-      var: contador,
-      onUpdate: function() {
-        var number = Math.ceil(counter.var);
-        objeto.html(number);
-        if (number === counter.var) { return; }
-      },
-      ease: Circ.easeOut
-    });
-  }
-
-  function cambiaVisibilidad(visible, objeto) {
-    //console.log("¿Elemento %s está visible?: %s", objeto, visible);
-    if (visible) { count($(objeto)); }
-  }
-  
-  $(function() {
-    $(".counter").each(function(){
-      //console.log($(this).visible());
-      if ($(this).visible()){
-        count($(this));
-      }
-      //cambiaVisibilidad(true, this);
-      //inViewportTotally(document.getElementById(this.id), cambiaVisibilidad);
-    })
-  });
-</script>
