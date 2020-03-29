@@ -3,8 +3,13 @@ include("header.php");
 // primero hay que incluir la clase phpmailer para poder instanciar
 //un objeto de la misma
 $CHARSET = "UTF-8";
-require_once('dist/php/PHPMailer/class.phpmailer.php');
-include_once('dist/php/PHPMailer/class.smtp.php');
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require('dist/php/PHPMailer/src/Exception.php');
+require('dist/php/PHPMailer/src/PHPMailer.php');
+require('dist/php/PHPMailer/src/SMTP.php');
 
 ?>
 <style>
@@ -84,48 +89,33 @@ include_once('dist/php/PHPMailer/class.smtp.php');
                         $mailto[] = $value;
                     }
                     $prod = str_replace("-", " ",  $producto[0]);
-                    //instanciamos un objeto de la clase phpmailer al que llamamos 
-                    //por ejemplo mail
-                    $mail = new phpmailer(true);
 
-                    //Definimos las propiedades y llamamos a los métodos 
-                    //correspondientes del objeto mail
-
-                    //Con PluginDir le indicamos a la clase phpmailer donde se 
-                    //encuentra la clase smtp que como he comentado al principio de 
-                    //este ejemplo va a estar en el subdirectorio includes
-                    $mail->PluginDir = "dist/php/PHPMailer/";
-
-                    //Con la propiedad Mailer le indicamos que vamos a usar un 
-                    //servidor smtp
-                    $mail->Mailer = "smtp";
-
-                    //Asignamos a Host el nombre de nuestro servidor smtp
-                    $mail->Host = "rm000235.ferozo.com";
-
-                    //Le indicamos que el servidor smtp requiere autenticación
-                    $mail->SMTPAuth = true;
-
-                    //Le decimos cual es nuestro nombre de usuario y password
+                    $mail = new PHPMailer(true);
+                    
+                    //Server settings
+                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                    $mail->isSMTP();                                            // Send using SMTP
+                    //$mail->Host       = 'smtp1.example.com';                    // Set the SMTP server to send through
+                    $mail->Host       = "rm000235.ferozo.com";
+                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
                     $mail->Username = "alejandro@landini.com.ar";
                     $mail->Password = "*bHYacE1pQ";
+                    // $mail->Username   = 'user@example.com';                     // SMTP username
+                    // $mail->Password   = 'secret';                               // SMTP password
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
                     //Indicamos cual es nuestra dirección de correo y el nombre que 
                     //queremos que vea el usuario que lee nuestro correo
-                    $mail->From = "alejandro@landini.com.ar";
-                    $mail->FromName = "Alejandro Landini";
-
-                    //el valor por defecto 10 de Timeout es un poco escaso dado que voy a usar 
-                    //una cuenta gratuita, por tanto lo pongo a 30  
-                    $mail->Timeout = 30;
-
-                    //Indicamos cual es la dirección de destino del correo
-                    $mail->AddAddress($mailto[0]);
+                    //Recipients
+                    $mail->setFrom('alejandro@landini.com.ar', 'Alejandro Landini');
+                    $mail->addAddress($mailto[0]);     // Add a recipient
+                    // $mail->addReplyTo('info@example.com', 'Information');
+                    // $mail->addCC('cc@example.com');
                     $mail->addBCC('landinialejandro@hotmail.com');
+                    $mail->addBCC('alejandro@landini.com.ar');
 
-                    //Asignamos asunto y cuerpo del mensaje
-                    //El cuerpo del mensaje lo ponemos en formato html, haciendo 
-                    //que se vea en negrita
+                    $mail->isHTML(true);  
                     $mail->Subject = "Has solicitado informacion en landini.com.ar ";
                     $mail->Body = "<strong>hola! El siguiente correo: <a href=mailto:" .
                         $mailto[0] . ">" .
@@ -137,11 +127,11 @@ include_once('dist/php/PHPMailer/class.smtp.php');
 
                     //Definimos AltBody por si el destinatario del correo no admite email con formato html 
                     $mail->AltBody = "El siguiente correo:" . $mailto[0] . " envió una solicituda de envio de información de: " . $prod;
-
+                    echo "<br>after AltBody";
                     //se envia el mensaje, si no ha habido problemas 
                     //la variable $exito tendra el valor true
                     $exito = $mail->Send();
-
+                    echo "<br>after send";
                     //Si el mensaje no ha podido ser enviado se realizaran 4 intentos mas como mucho 
                     //para intentar enviar el mensaje, cada intento se hara 5 segundos despues 
                     //del anterior, para ello se usa la funcion sleep	
@@ -153,7 +143,7 @@ include_once('dist/php/PHPMailer/class.smtp.php');
                         $intentos = $intentos + 1;
                     }
                     if (!$exito) {
-                        echo "Problemas enviando correo electrónico a " . $valor;
+                        echo "Problemas enviando correo electrónico a " . $mailto[0];
                         echo "<br>" . $mail->ErrorInfo;
                     } else {
                         echo "Pronto estaré en contacto!<br><br>";
