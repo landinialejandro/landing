@@ -11,6 +11,8 @@
  *   $(element).mcounter(); is the js constructor that allows to reform any element in an animated counter. option values can be passed to it.
  *   $('.counter').visibilityChanged (); 
  *   This second method activates the counters on the screen, if these are visible, the counter starts. option values can be passed to it.
+ *   use HTML attr start counter without js
+ *   <span class="counter" id="counter-lat" data-endcountvalue="3801"></span>
  * 
  * @param {Boolean} runOnLoad - true start counter is visible on load page
  * @param {Number} frequency - 100ms, time to check if the control chague vsibility
@@ -112,5 +114,5 @@
         });
         $(this).hide().wrap(`<span class="counter" ${res.join(' ')}>0</span>`);
     };
-    methods.checkVisibility(".counter", options);
+    $('.counter').visibilityChanged();
 })(jQuery);

@@ -21,21 +21,21 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
-    <script src="dist/l-makecounter/l-makecounter.min.js"></script>
+    <script src="dist/plugins/l-makecounter/l-makecounter.js"></script>
     <script>
-        $(function() {
-            $('#sales').mcounter({
-                endcountvalue: 4002,
-                startcountvalue: 3995,
-                elapsetime:8
-            });
-            $('.counter').visibilityChanged({
-                callback: function(element, visible, initialLoad) {
-                    // do something
-                    console.log("visible?: " + visible);
-                }
-            });
-        })
+        // $(function() {
+        //     $('#sales').mcounter({
+        //         endcountvalue: 4002,
+        //         startcountvalue: 3995,
+        //         elapsetime:8
+        //     });
+        //     $('.counter').visibilityChanged({
+        //         callback: function(element, visible, initialLoad) {
+        //             // do something
+        //             console.log("visible?: " + visible);
+        //         }
+        //     });
+        // })
     </script>
 </body>
 
