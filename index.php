@@ -130,7 +130,7 @@ include("header.php");
             <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
               codificar nada, instale, active el plugin y disfrute!</p>
 
-            <h3>+<span class="counter" id="counter-lat" data-endcountvalue="3801">0</span> visitas!</h3>
+            <h3>+<span class="counter" id="counter-lat" data-startcountvalue="3600" data-endcountvalue="3801">0</span> visitas!</h3>
             <div class="col-sm-12">
               <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
@@ -159,7 +159,7 @@ include("header.php");
               Totalmente configurable y actualizable desde la ventana del perfil de
               usuario, agregue valor a sus aplicaciones. <br>
               Plugin ready, instale, active el plugin y disfrute!</p>
-            <h3>+<span class="counter" id="counter-mpi" data-endcountvalue="4258">0</span> visitas!</h3>
+            <h3>+<span class="counter" id="counter-mpi" data-startcountvalue="4000" data-endcountvalue="4258">0</span> visitas!</h3>
             <div class="col-sm-12">
               <a href="products/mpi/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
                 <img src="products/mpi/img/forum.PNG" class="img-fluid mb-2" alt="forum">
