@@ -112,4 +112,5 @@
         });
         $(this).hide().wrap(`<span class="counter" ${res.join(' ')}>0</span>`);
     };
+    methods.checkVisibility(".counter", options);
 })(jQuery);
