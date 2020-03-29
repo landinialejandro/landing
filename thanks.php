@@ -1,5 +1,8 @@
 <?php
 include("header.php");
+$post = $_POST;
+var_dump($post)
+
 ?>
 <style>
     .l-text-h3{

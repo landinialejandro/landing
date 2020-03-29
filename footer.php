@@ -22,6 +22,7 @@
   <script src="dist/plugins/jquery-ui/jquery-ui.min.js"></script>
   <script src="dist/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
   <script src="dist/js/adminlte.min.js"></script>
+  <script src="dist/plugins/jquery-validation/jquery.validate.js"></script>
   <script src="dist/plugins/filterizr/jquery.filterizr.min.js"></script>
   <script src="dist/plugins/TweenMax/TweenMax.min.js"></script>
   <script src="dist/plugins/l-makecounter/l-makecounter.min.js"></script>

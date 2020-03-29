@@ -80,16 +80,15 @@ include("header.php");
               que necesites.
               Totalmente desarrollada con AppGini.
             </p>
-
           </div>
           <div class="card-footer">
-            <form action="thanks.php" method="post">
+            <form id="tu-negocio-web" action="thanks.php" novalidate="novalidate" method="POST">
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <button type="submit" class="btn btn-default"><i class="fas fa-envelope"></i></button>
                 </div>
                 <!-- /btn-group -->
-                <input type="email" class="form-control" placeholder="Email">
+                <input name="tu-negocio-web-mail" id="tu-negocio-web-mail" type="email" class="form-control" placeholder="Email">
               </div>
             </form>
           </div>
@@ -108,12 +107,14 @@ include("header.php");
             </p>
           </div>
           <div class="card-footer">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <form id = "sistema-plus" novalidate="novalidate" method="POST" action ="thanks.php">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                <button type="submit" class="btn btn-default"><i class="fas fa-envelope"></i></button>
+                </div>
+                <input name="sistema-plus-mail" id="sistema-plus-mail" type="email" class="form-control" placeholder="Email">
               </div>
-              <input type="email" class="form-control" placeholder="Email">
-            </div>
+            </form>
           </div>
         </div><!-- /.card -->
       </div>
@@ -185,5 +186,49 @@ include("header.php");
 include("footer.php");
 ?>
 <script>
-  $(function() {});
+  $(function() {
+    $('form').each(function() {
+      $(this).validate({
+        rules: {
+          "tu-negocio-web-mail": {
+            required: true,
+            email: true
+          },
+          "sistema-plus-mail": {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          "tu-negocio-web-mail": "ingrese un correo valido por favor",
+          "sistema-plus-mail": "ingrese un correo valido por favor"
+        },
+        errorElement: "em",
+        errorPlacement: function(error, element) {
+          error.addClass("invalid-feedback");
+          element.parents(".col-sm-5").addClass("invalid-feedback");
+          error.insertAfter(element);
+          if (!element.next("span")[0]) {
+            $("<span class='fas fa-times invalid-feedback'></span>").insertAfter(element);
+          }
+        },
+        success: function(label, element) {
+          $el = $(element);
+          if (!$el.next("span")[0]) {
+            $("<span class='fas fa-thumbs-up valid-feedback'></span>").insertAfter($el);
+          }
+        },
+        highlight: function(element, errorClass, validClass) {
+          $el = $(element);
+          $el.addClass("is-invalid").removeClass("is-valid");
+          $el.next("span").addClass("fa-times").removeClass("fa-thumbs-up");
+        },
+        unhighlight: function(element, errorClass, validClass) {
+          $el = $(element);
+          $el.addClass("is-valid").removeClass("is-invalid");
+          $el.next("span").addClass("fa-thumbs-up valid-feedback ").removeClass("fa-times invalid-feedback");
+        }
+      })
+    });
+  })
 </script>
