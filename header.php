@@ -8,8 +8,8 @@
 
   <title>Landini</title>
   <link id="browser_favicon" rel="shortcut icon" href="logo.png">
-  <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="dist/plugins/ekko-lightbox/ekko-lightbox.css">
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">

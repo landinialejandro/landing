@@ -83,12 +83,15 @@ include("header.php");
 
           </div>
           <div class="card-footer">
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+            <form action="thanks.php" method="post">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button type="submit" class="btn btn-default"><i class="fas fa-envelope"></i></button>
+                </div>
+                <!-- /btn-group -->
+                <input type="email" class="form-control" placeholder="Email">
               </div>
-              <input type="email" class="form-control" placeholder="Email">
-            </div>
+            </form>
           </div>
         </div>
 
@@ -175,9 +178,12 @@ include("header.php");
       <!-- /.col-md-6 -->
     </div>
     <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div><!-- /.container -->
 </div>
 <!-- /.content -->
 <?php
 include("footer.php");
 ?>
+<script>
+  $(function() {});
+</script>
