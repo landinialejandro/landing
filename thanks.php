@@ -91,7 +91,7 @@ require('dist/php/PHPMailer/src/SMTP.php');
                     $prod = str_replace("-", " ",  $producto[0]);
 
                     $mail = new PHPMailer(true);
-                    
+
                     //Server settings
                     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
                     $mail->isSMTP();                                            // Send using SMTP
@@ -102,7 +102,7 @@ require('dist/php/PHPMailer/src/SMTP.php');
                     $mail->Password = "*bHYacE1pQ";
                     // $mail->Username   = 'user@example.com';                     // SMTP username
                     // $mail->Password   = 'secret';                               // SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                     $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
                     //Indicamos cual es nuestra dirección de correo y el nombre que 
