@@ -2,7 +2,6 @@
 include("header.php");
 // primero hay que incluir la clase phpmailer para poder instanciar
 //un objeto de la misma
-$CHARSET = "UTF-8";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
@@ -93,7 +92,7 @@ require('dist/php/PHPMailer/src/SMTP.php');
                     $mail = new PHPMailer(true);
 
                     //Server settings
-                    $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
                     $mail->isSMTP();                                            // Send using SMTP
                     //$mail->Host       = 'smtp1.example.com';                    // Set the SMTP server to send through
                     $mail->Host       = "rm000235.ferozo.com";
@@ -127,11 +126,9 @@ require('dist/php/PHPMailer/src/SMTP.php');
 
                     //Definimos AltBody por si el destinatario del correo no admite email con formato html 
                     $mail->AltBody = "El siguiente correo:" . $mailto[0] . " envió una solicituda de envio de información de: " . $prod;
-                    echo "<br>after AltBody";
                     //se envia el mensaje, si no ha habido problemas 
                     //la variable $exito tendra el valor true
                     $exito = $mail->Send();
-                    echo "<br>after send";
                     //Si el mensaje no ha podido ser enviado se realizaran 4 intentos mas como mucho 
                     //para intentar enviar el mensaje, cada intento se hara 5 segundos despues 
                     //del anterior, para ello se usa la funcion sleep	
