@@ -6,6 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+  <meta property="og:title" content="Landini profile site">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:url" content="http://www.landini.com.ar/">
+  <meta property="og:site_name" content="Landini software develope">
+  <meta property="og:description" content="Desarrollo de aplicaciones web optimizadas para dispositivos móviles, más rápido y mucho menos costoso.">
+
   <title>Landini</title>
   <link id="browser_favicon" rel="shortcut icon" href="logo.png">
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
