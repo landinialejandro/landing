@@ -11,8 +11,7 @@ include("header.php");
       </div><!-- /.col -->
       <div class="col-sm-6">
         <h1 class="m-0 text-dark">Basado AppGini, herramienta de desarrollo de <a href="https://bigprof.com/" target="_blank">BigProf</a></h1>
-        <p>La plataforma de desarrollo es mundialmente difundida, cualquiera de las miles de personas de la
-          comunidad puede seguir perfectamente su proyecto.</p>
+        <p>La plataforma de desarrollo es mundialmente difundida, cuenta con una comunidad de las miles de personas en todo el mundo.</p>
       </div><!-- /.col -->
 
     </div><!-- /.row -->
