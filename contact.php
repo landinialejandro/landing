@@ -203,55 +203,55 @@ include("header.php");
               </div>
               <!-- /.tab-pane -->
               <div class="tab-pane" id="settings">
-                <form class="form-horizontal">
+                <form id="contactform" class="form-horizontal" action="thanks.php" novalidate="novalidate" method="POST">
                   <div class="form-group row">
                     <label for="inputName" class="col-sm-2 col-form-label">Nombre</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputName" placeholder="Nombre">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="Nombre">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputName2" class="col-sm-2 col-form-label">Apellido</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName2" placeholder="Apellido">
+                      <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Apellido">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                      <input type="email" class="form-control" name="mail" id="mail" placeholder="Email">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputEmpresa" class="col-sm-2 col-form-label">Empresa</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName2" placeholder="Empresa">
+                      <input type="text" class="form-control" name="company" id="company" placeholder="Empresa">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputPosicion" class="col-sm-2 col-form-label">Posición</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="inputName2" placeholder="Posición">
+                      <input type="text" class="form-control" name="position" id="position" placeholder="Posición">
                     </div>
                   </div>
                   <div class="form-group row">
                     <label for="inputExperience" class="col-sm-2 col-form-label">Comentarios</label>
                     <div class="col-sm-10">
-                      <textarea class="form-control" id="inputExperience" placeholder="Comentarios"></textarea>
+                      <textarea class="form-control" name="comments" id="comments" placeholder="Comentarios"></textarea>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                       <div class="checkbox">
                         <label>
-                          <input type="checkbox"> Quiero recibir notificaciones!
+                          <input type="checkbox" name="notify"> Quiero recibir notificaciones!
                         </label>
                       </div>
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-success">Enviar</button>
+                      <button type="submit" name="contact" class="btn btn-success">Enviar</button>
                     </div>
                   </div>
                 </form>
@@ -274,3 +274,45 @@ include("header.php");
 <?php
 include("footer.php");
 ?>
+<script type="text/javascript">
+$(document).ready(function () {
+  $("#contactform").validate({
+    rules: {
+      mail: {
+        required: true,
+        email: true,
+      },
+      notify: {
+        required: true
+      },
+      name: {
+        required: true
+      },
+      company: {
+        required: true
+      },
+      comments: {
+        required: true
+      }
+    },
+    messages: {
+      email: {
+        required: "Please enter a email address",
+        email: "Please enter a vaild email address"
+      },
+      terms: "Please accept receive my emails!"
+    },
+    errorElement: 'span',
+    errorPlacement: function (error, element) {
+      error.addClass('invalid-feedback');
+      element.closest('.form-group').append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass('is-invalid');
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass('is-invalid');
+    }
+  });
+});
+</script>
