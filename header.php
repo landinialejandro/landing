@@ -8,7 +8,7 @@
 
   <meta property="og:title" content="Landini profile site">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="http://landini.com.ar/logo.png">
   <meta property="og:url" content="http://www.landini.com.ar/">
   <meta property="og:site_name" content="Landini software develope">
   <meta property="og:description" content="Desarrollo de aplicaciones web optimizadas para dispositivos móviles, más rápido y mucho menos costoso.">
