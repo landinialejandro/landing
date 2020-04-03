@@ -17,7 +17,6 @@
 
   <!-- jQuery -->
   <script src="dist/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
   <script src="dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="dist/plugins/jquery-ui/jquery-ui.min.js"></script>
   <script src="dist/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
