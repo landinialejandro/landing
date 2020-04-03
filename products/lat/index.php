@@ -24,13 +24,12 @@ include("../header.php");
         <br>
         <ul>
             <li>
-                <h3>Descarga de manera gratuita la versión 1 </h3>
+                <h3><a href="https://github.com/myappgini/lteadmin">Descarga de manera gratuita la versión 1</a></h3>
                 Compatible 100% con Appgini y Bootstrap 3
             </li>
             <li>
-                <h3>Descarga de manera gratuita la versión 2 </h3>
+                <h3><a href="https://github.com/myappgini/LandiniAdminTemplate">Descarga de manera gratuita la versión 2</a></h3>
                 Campitibilidad adaptada para que Appgini funcione con Bootstrap 4 <br>
-                En desarrollo. Prueba la versión beta. <br>
                 Crea sin límites con la nueva version de BS4 y todo su potencial.
             </li>
             <li>
