@@ -28,7 +28,7 @@ include("header.php");
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
-              <img class="profile-user-img img-fluid img-circle" src="dist/img/Face.png" alt="User Avatar">
+              <img class="profile-user-img img-fluid img-circle" src="dist/dist_L/logo/Face.png" alt="User Avatar">
             </div>
 
             <h3 class="profile-username text-center">Alejandro Landini</h3>
@@ -37,13 +37,13 @@ include("header.php");
 
             <ul class="list-group list-group-unbordered mb-3">
               <li class="list-group-item">
-                <b>Productos</b> <a class="float-right">6</a>
+                <b>Productos</b> <a class="float-right"><?php echo $products; ?></a>
               </li>
               <li class="list-group-item">
-                <b>Seguidores</b> <a class="float-right">96</a>
+                <b>Seguidores</b> <a class="float-right"><?php echo $followers; ?></a>
               </li>
               <li class="list-group-item">
-                <b>Ventas</b> <a class="float-right">122</a>
+                <b>Ventas</b> <a class="float-right"><?php echo $sales; ?></a>
               </li>
             </ul>
 

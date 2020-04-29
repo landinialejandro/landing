@@ -1,8 +1,3 @@
- <?php
-  $sales = 122;
-  $followers = 96;
-  $products = 8;
-  ?>
  <!-- profile -->
  <div class="col-lg-6">
    <!-- Widget: user widget style 1 -->

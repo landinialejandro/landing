@@ -62,6 +62,7 @@
               <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Productos</a>
               <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
                 <li><a href="products/lat/index.php" class="dropdown-item">Admin Template </a></li>
+                <li><a href="products/snippetsGen/index.php" class="dropdown-item">Snippet Generator </a></li>
                 <li><a href="products/mpi/index.php" class="dropdown-item">Profile Image </a></li>
                 <li><a href="products/tnz/index.php" class="dropdown-item">Tu Negocio web! </a></li>
 
@@ -102,3 +103,8 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
+    <?php
+  $sales = 122;
+  $followers = 96;
+  $products = 8;
+  ?>
