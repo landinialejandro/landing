@@ -67,125 +67,13 @@ include("header.php");
         </div>
         <!-- /.widget-user -->
       </div>
-      <!-- Landini admin Template -->
-      <div class="col-lg-6">
-        <div class="ribbon-wrapper ribbon-xl">
-          <div class="ribbon bg-warning text-lg">
-          new release
-          </div>
-        </div>
-        <div class="card card-primary">
-          <div class="card-header">
-            <h5 class="card-title m-0">Landini Admin Template</h5>
-          </div>
-          <div class="card-body">
-            <h6 class="card-title">Herramienta para desarrolladores</h6>
-
-            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
-              codificar nada, instale, active el plugin y disfrute!</p>
-
-            <h3>+<span class="counter" id="counter-lat" data-startcountvalue="3600" data-endcountvalue="3801">0</span> visitas!</h3>
-            <div class="col-sm-12">
-              <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
-                <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
-              </a>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a class="btn btn-app float-left bg-indigo" href="products/lat/index.php">
-              <i class="fas fa-plus"></i> Información
-            </a>
-            <a class="btn btn-app float-right" href="https://github.com/myappgini/LandiniAdminTemplate">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <!-- Sistema plus -->
-      <div class="col-lg-6">
-        <div class="card card-primary card-outline">
-          <div class="card-body">
-            <h5 class="card-title">Sistema Plus!</h5>
-            <br>
-            <p class="card-text">
-              Sistema propietario, desarrollado para medianas empresas, gestión de presupuesto, pedido de
-              compras, control de inventario.
-              Gestión de documentos, recibos, cobranzas. <br>
-              <i class="fas fa-star text-warning"></i> Versión disponible para laboratorios de metrología y
-              centros de calibración de instrumentos.
-            </p>
-          </div>
-          <div class="card-footer">
-            <form id="sistema-plus" novalidate="novalidate" method="POST" action="thanks.php">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button type="submit" class="btn btn-default"><i class="fas fa-envelope"></i></button>
-                </div>
-                <input name="sistema-plus-mail" id="sistema-plus-mail" type="email" class="form-control" placeholder="Email">
-              </div>
-            </form>
-          </div>
-        </div><!-- /.card -->
-      </div>
-      <!-- sistema web -->
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Tu Negocio Web!</h5>
-            <br>
-            <p class="card-text">
-              Aplicación desarrollada de facturación para argentina, adpatación personalizada para cada tipo de
-              negocio.
-              Vos dedicate a tus negocios, tunegocioweb te hace el resto más fácil. <br>
-              Facturación online, control de inventario, de clientes, de proveedores, o simplemente facturas lo
-              que necesites.
-              Totalmente desarrollada con AppGini.
-            </p>
-          </div>
-          <div class="card-footer">
-            <form id="tu-negocio-web" action="thanks.php" novalidate="novalidate" method="POST">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button type="submit" class="btn btn-default"><i class="fas fa-envelope"></i></button>
-                </div>
-                <!-- /btn-group -->
-                <input name="tu-negocio-web-mail" id="tu-negocio-web-mail" type="email" class="form-control" placeholder="Email">
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- mpi -->
-      <div class="col-lg-6">
-        <div class="card card-primary card-outline">
-          <div class="card-header">
-            <h5 class="card-title m-0">Membership profile image</h5>
-          </div>
-          <div class="card-body">
-            <h6 class="card-title">Herramienta para desarrolladores</h6>
-
-            <p class="card-text">Integre, a sus sistemas creado en AppGini, la posibilidad de mostrar en la barra
-              del menú una imagen del usuario. <br>
-              Totalmente configurable y actualizable desde la ventana del perfil de
-              usuario, agregue valor a sus aplicaciones. <br>
-              Plugin ready, instale, active el plugin y disfrute!</p>
-            <h3>+<span class="counter" id="counter-mpi" data-startcountvalue="4000" data-endcountvalue="4258">0</span> visitas!</h3>
-            <div class="col-sm-12">
-              <a href="products/mpi/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
-                <img src="products/mpi/img/forum.PNG" class="img-fluid mb-2" alt="forum">
-              </a>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a class="btn btn-app float-left bg-indigo" href="products/mpi/index.php">
-              <i class="fas fa-plus"></i> Información
-            </a>
-            <a class="btn btn-app float-right" href="https://github.com/myappgini/mpi">
-              <i class="fab fa-github"></i> GitHub
-            </a>
-          </div>
-        </div>
-      </div>
+      <?php 
+      include "products/snippetsGen/card.php";
+      include "products/lat/card.php";
+      include "products/erp_sp/card.php";
+      include "products/tnz/card.php";
+      include "products/mpi/card.php";
+      ?>
       <!-- /.row -->
     </div><!-- /.container -->
   </div>
