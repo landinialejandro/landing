@@ -8,8 +8,8 @@
     <title>Landini</title>
 
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <link rel="stylesheet" href="../../dist/css/adminlte.css">
-    <link rel="stylesheet" href="../../dist/css/main.css">
+    <link rel="stylesheet" href="../../dist/dist/css/adminlte.css">
+    <link rel="stylesheet" href="../../dist/dist_L/css/main.css">
     <link rel="stylesheet" href="../../dist/plugins/ekko-lightbox/ekko-lightbox.css">
 
     <link id="browser_favicon" rel="shortcut icon" href="../../logo.png">
@@ -18,7 +18,7 @@
     <script src="../../dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../../dist/plugins/jquery-ui/jquery-ui.min.js"></script>
     <script src="../../dist/plugins/ekko-lightbox/ekko-lightbox.min.js"></script>
-    <script src="../../dist/js/adminlte.js"></script>
+    <script src="../../dist/dist/js/adminlte.js"></script>
     <script src="../../dist/plugins/jquery-validation/jquery.validate.js"></script>
     <script src="../../dist/plugins/filterizr/jquery.filterizr.min.js"></script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -41,5 +41,5 @@
             
 <?php 
 $home = "../../index.php";
-$logo = "../../dist/img/L3.png";
+$logo = "../../dist/dist_L/logo/L3.png";
 ?>

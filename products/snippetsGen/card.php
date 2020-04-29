@@ -11,21 +11,15 @@
           <div class="card-body">
             <h6 class="card-title">Herramienta para desarrolladores</h6>
 
-            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
-              codificar nada, instale, active el plugin y disfrute!</p>
-
-            <h3>+<span class="counter" id="counter-lat" data-startcountvalue="3600" data-endcountvalue="3801">0</span> visitas!</h3>
-            <div class="col-sm-12">
-              <a href="products/lat/img/forum.PNG?text=1" data-toggle="lightbox" data-title="AppGini Forum" data-gallery="gallery">
-                <img src="products/lat/img/forum.PNG" class="img-fluid mb-2" alt="forum">
-              </a>
-            </div>
+            <p class="card-text">
+            Agregue dinámicamente desde un formulario sus snippets, cree su propio json para su entorno de trabajo.
+            Copie y pegue un json existente y modifiquelo facilmente desde el editor de objetos.  
           </div>
           <div class="card-footer">
             <a class="btn btn-app float-left bg-indigo" href="products/snippetsGen/index.php">
               <i class="fas fa-plus"></i> Información
             </a>
-            <a class="btn btn-app float-right" href="https://github.com/myappgini/LandiniAdminTemplate">
+            <a class="btn btn-app float-right" href="https://github.com/landinialejandro/vscode_genSnippets">
               <i class="fab fa-github"></i> GitHub
             </a>
           </div>
