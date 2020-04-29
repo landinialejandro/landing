@@ -33,7 +33,7 @@ include("header.php");
             <h5 class="widget-user-desc">Founder &amp; CEO</h5>
           </div>
           <div class="widget-user-image">
-            <img class="img-circle elevation-2" src="dist/img/Face.png" alt="User Avatar">
+            <img class="img-circle elevation-2" src="dist/dist_L/logo/Face.png" alt="User Avatar">
           </div>
           <div class="card-footer">
             <div class="row">

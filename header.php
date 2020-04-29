@@ -15,7 +15,7 @@
 
   <title>Landini</title>
   <link id="browser_favicon" rel="shortcut icon" href="logo.png">
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="dist/plugins/ekko-lightbox/ekko-lightbox.css">
 
@@ -41,7 +41,7 @@
     <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
       <div class="container">
         <a href="index.php" class="navbar-brand">
-          <img src="dist/img/L3.png" class="brand-image" style="opacity: .8">
+          <img src="dist/dist_L/logo/L3.png" class="brand-image" style="opacity: .8">
           <span class="brand-text font-weight-light" style="margin-left: -10px;">andini</span>
         </a>
 
