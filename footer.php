@@ -24,7 +24,7 @@
   <script src="dist/plugins/jquery-validation/jquery.validate.js"></script>
   <script src="dist/plugins/filterizr/jquery.filterizr.min.js"></script>
   <script src="dist/dist_L/TweenMax/TweenMax.min.js"></script>
-  <script src="dist/dist_l/makecounter/makecounter.min.js"></script>
+  <script src="dist/dist_L/makecounter/makecounter.min.js"></script>
   
 
   <script>
