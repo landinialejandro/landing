@@ -18,11 +18,12 @@ include("../header.php");
 <div class="col-md-4 feature-panel">
     <h2>La mejor generador de Snippets gratis para VSCode!</h2>
     <p>Desarrollado en JS y HTML.<br>
-        Obten la mejor experiancia del entorno tue entorno preferido para desarrollo.
+        Obten la mejor experiancia del tu entorno preferido para desarrollo.
+        Genera de manera sencilla todos tus snippets!
         <br>
         <ul>
             <li>
-                <h3> Puedes utilizarlo desde <a href="https://github.com/myappgini/lteadmin">aqui</a> gratuitamente</h3>
+                <h3> Puedes utilizarlo desde <a href="../../sys/snippetsGen/index.html">aqui</a> gratuitamente</h3>
             </li>
             <li>
                 <h3>Descarga y usalo en tu PC off-line!</h3>

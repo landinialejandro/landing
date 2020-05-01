@@ -19,8 +19,8 @@
             <a class="btn btn-app float-left bg-indigo" href="products/snippetsGen/index.php">
               <i class="fas fa-plus"></i> Información
             </a>
-            <a class="btn btn-app float-left bg-succes" href="sys/snippetsGen/index.html">
-              <i class="fas fa-plus"></i> Pruébalo!
+            <a class="btn btn-app float-left bg-success" href="sys/snippetsGen/index.html">
+            <i class="far fa-hand-point-down"></i> Pruébalo!
             </a>
             <a class="btn btn-app float-right" href="https://github.com/landinialejandro/vscode_genSnippets">
               <i class="fab fa-github"></i> GitHub
