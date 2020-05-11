@@ -5,12 +5,12 @@ include("header.php");
 <div class="content-header">
   <div class="container">
     <div class="row mb-2">
-      <div class="col-sm-6">
+      <div class="col-12 col-md-6">
         <h1 class="m-0 text-dark">Desarrollo de aplicaciones web optimizadas para dispositivos móviles, más rápido
           y mucho menos costoso.</h1>
       </div><!-- /.col -->
-      <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Desarrollado con AppGini, herramienta de desarrollo de <a href="https://bigprof.com/" target="_blank">BigProf</a></h1>
+      <div class="col-12 col-md-6">
+        <h1 class="m-0 text-dark">Desarrollado con AppGini, herramienta de <a href="https://bigprof.com/" target="_blank">BigProf</a></h1>
         <p>La plataforma de desarrollo es mundialmente difundida, cuenta con una comunidad de las miles de personas en todo el mundo.</p>
       </div><!-- /.col -->
 
@@ -22,14 +22,14 @@ include("header.php");
 <div class="content">
   <div class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <?php
         include "card_profile.php";
         include "products/erp_sp/card.php";
         include "products/tnz/card.php";
         ?>
       </div>
-      <div class="col-6">
+      <div class="col-12 col-md-6">
         <?php
         include "products/snippetsGen/card.php";
         include "products/lat/card.php";
