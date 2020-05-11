@@ -11,6 +11,19 @@ require('dist/php/PHPMailer/src/Exception.php');
 require('dist/php/PHPMailer/src/PHPMailer.php');
 require('dist/php/PHPMailer/src/SMTP.php');
 
+
+$captcha = $_POST['g-recaptcha-response'];
+
+if (!$captcha) {
+    echo '<p>Please complete the captcha to submit the form.</p>';
+    exit;
+} else {
+    $secretKey = "6Lcji_MUAAAAAIFVloKesM3FvdYcWnlElVU_e2sE";
+    $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
+    $response = file_get_contents($url);
+    $responseKeys = json_decode($response, true);
+}
+
 ?>
 <style>
     .l-text-h3 {
@@ -81,102 +94,107 @@ require('dist/php/PHPMailer/src/SMTP.php');
             </div>
             <p class="l-text-h3 text-center">
                 <?php
-                if (!empty($_POST)) {
-                    $post = $_POST;
-                    if (isset($post['contact'])){
-                        //   'name' => string 'Alejandro' (length=9)
-                        //   'lastname' => string 'Landini' (length=7)
-                        //   'mail' => string 'alejandro@landini.com.ar' (length=24)
-                        //   'company' => string 'Landini' (length=7)
-                        //   'position' => string 'ceo' (length=3)
-                        //   'comments' => string 'comentario' (length=10)
-                        //   'notify' => string 'on' (length=2)
-                        //   'contact' => string '' (length=0)
-                        $contact = true;
-                        $mailto[0]=$post['mail'];
-                        $prod="Contact form";
-                        $_mail = "<strong>hola! {$post['name']}, {$post['lastname']} Gracias por tu contacto.</strong>".
+                if ($responseKeys["success"]) {
+                    if (!empty($_POST)) {
+                        $post = $_POST;
+                        if (isset($post['contact'])) {
+                            //   'name' => string 'Alejandro' (length=9)
+                            //   'lastname' => string 'Landini' (length=7)
+                            //   'mail' => string 'alejandro@landini.com.ar' (length=24)
+                            //   'company' => string 'Landini' (length=7)
+                            //   'position' => string 'ceo' (length=3)
+                            //   'comments' => string 'comentario' (length=10)
+                            //   'notify' => string 'on' (length=2)
+                            //   'contact' => string '' (length=0)
+                            $contact = true;
+                            $mailto[0] = $post['mail'];
+                            $prod = "Contact form";
+                            $_mail = "<strong>hola! {$post['name']}, {$post['lastname']} Gracias por tu contacto.</strong>" .
                                 "<br>Es muy valioso para mi tus comentarios:<br>" .
-                                $post['comments']. 
+                                $post['comments'] .
                                 "<br> en breve me comunico contigo<br>" .
-                                "<br> Tú empresa es: {$post['company']}".
-                                "<br> Tú cargo es: {$post['position']}".
-                                "<br><br> Saludos, Alejandro Landini".
-                                "<br><hr><br>".
-                                "<strong>Hi! {$post['name']}, {$post['lastname']} Thank you for your contact.</strong>".
+                                "<br> Tú empresa es: {$post['company']}" .
+                                "<br> Tú cargo es: {$post['position']}" .
+                                "<br><br> Saludos, Alejandro Landini" .
+                                "<br><hr><br>" .
+                                "<strong>Hi! {$post['name']}, {$post['lastname']} Thank you for your contact.</strong>" .
                                 "<br>Your comments are very valuable to me:<br>" .
-                                $post['comments']. 
+                                $post['comments'] .
                                 "<br> I will contact you shortly<br>" .
-                                "<br> your company is: {$post['company']}".
-                                "<br> your position is: {$post['position']}".
+                                "<br> your company is: {$post['company']}" .
+                                "<br> your position is: {$post['position']}" .
                                 "<br><br> Greetings, Alejandro Landini";
 
-                        $_mail_body = "Hola!: el siguiente correo {$post['mail']} envió tus datos de contacto! en breve me comunico contigo! Saludos! Alejandro ";
-                    }else{
-                        $contact = false;
-                        foreach ($post as $key => $value) {
-                            $producto[] = $key;
-                            $mailto[] = $value;
-                        }
-                        $prod = str_replace("-", " ",  $producto[0]);
-                        $_mail = "<strong>Hola! El siguiente correo: <a href=mailto:{$mailto[0]}>{$mailto[0]}</a> envió una solicitud de información</strong>".
+                            $_mail_body = "Hola!: el siguiente correo {$post['mail']} envió tus datos de contacto! en breve me comunico contigo! Saludos! Alejandro ";
+                        } else {
+                            $contact = false;
+                            foreach ($post as $key => $value) {
+                                $producto[] = $key;
+                                $mailto[] = $value;
+                            }
+                            $prod = str_replace("-", " ",  $producto[0]);
+                            $_mail = "<strong>Hola! El siguiente correo: <a href=mailto:{$mailto[0]}>{$mailto[0]}</a> envió una solicitud de información</strong>" .
                                 "<br>Sobre el producto: {$prod}" .
                                 "<br> Agradezco mucho tú interes, en breve me comunico contigo<br>" .
-                                "<br><br> Saludos, Alejandro Landini".
-                                "<br><hr><br>".
-                                "<strong>Hi! The following email: <a href=mailto:{$mailto[0]}>{$mailto[0]}</a> sent a request for information</strong>".
+                                "<br><br> Saludos, Alejandro Landini" .
+                                "<br><hr><br>" .
+                                "<strong>Hi! The following email: <a href=mailto:{$mailto[0]}>{$mailto[0]}</a> sent a request for information</strong>" .
                                 "<br> About the product: {$prod}" .
                                 "<br> I appreciate your interest, I will contact you shortly<br>" .
                                 "<br><br> Greetings, Alejandro Landini";
-                        $_mail_body = "El siguiente correo: {$mailto[0]} envió una solicituda de envio de información de: {$prod}";
-                    }
-                    $mail = new PHPMailer(true);
+                            $_mail_body = "El siguiente correo: {$mailto[0]} envió una solicituda de envio de información de: {$prod}";
+                        }
+                        $mail = new PHPMailer(true);
 
-                    //Server settings
-                    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
-                    $mail->isSMTP();                                            // Send using SMTP
-                    $mail->Host       = "rm000235.ferozo.com";                    // Set the SMTP server to send through
-                    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                    $mail->Username = "alejandro@landini.com.ar";                     // SMTP username
-                    $mail->Password = "riKDweIo6nYEGKXTOXUTgQ8d";                               // SMTP password
-                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-                    $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+                        //Server settings
+                        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                        $mail->isSMTP();                                            // Send using SMTP
+                        $mail->Host       = "rm000235.ferozo.com";                    // Set the SMTP server to send through
+                        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+                        $mail->Username   = "alejandro@landini.com.ar";                     // SMTP username
+                        $mail->Password   = "riKDweIo6nYEGKXTOXUTgQ8d";                               // SMTP password
+                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                        $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
-                    //Recipients
-                    $mail->setFrom('alejandro@landini.com.ar', 'Alejandro Landini');
-                    $mail->addAddress($mailto[0]);     // Add a recipient
-                    // $mail->addReplyTo('info@example.com', 'Information');
-                    // $mail->addCC('cc@example.com');
-                    $mail->addBCC('landinialejandro@hotmail.com');
-                    $mail->addBCC('alejandro@landini.com.ar');
+                        //Recipients
+                        $mail->setFrom('alejandro@landini.com.ar', 'Alejandro Landini');
+                        $mail->addAddress($mailto[0]);     // Add a recipient
+                        // $mail->addReplyTo('info@example.com', 'Information');
+                        // $mail->addCC('cc@example.com');
+                        $mail->addBCC('landinialejandro@hotmail.com');
+                        $mail->addBCC('alejandro@landini.com.ar');
 
-                    $mail->isHTML(true);  
-                    $mail->Subject = "Has solicitado informacion en landini.com.ar ";
+                        $mail->isHTML(true);
+                        $mail->Subject = "Has solicitado informacion en landini.com.ar ";
 
-                    $mail->Body = $_mail;
+                        $mail->Body = $_mail;
 
-                    $mail->AltBody = $_mail_body;
+                        $mail->AltBody = $_mail_body;
 
-                    $exito = $mail->Send();
-                    
-                    $intentos = 1;
-                    while ((!$exito) && ($intentos < 5)) {
-                        sleep(5);
-                        //echo $mail->ErrorInfo;
                         $exito = $mail->Send();
-                        $intentos = $intentos + 1;
-                    }
-                    if (!$exito) {
-                        echo "Problemas enviando correo electrónico a " . $mailto[0];
-                        echo "<br>" . $mail->ErrorInfo;
+
+                        $intentos = 1;
+                        while ((!$exito) && ($intentos < 5)) {
+                            sleep(5);
+                            //echo $mail->ErrorInfo;
+                            $exito = $mail->Send();
+                            $intentos = $intentos + 1;
+                        }
+                        if (!$exito) {
+                            echo "Problemas enviando correo electrónico a " . $mailto[0];
+                            echo "<br>" . $mail->ErrorInfo;
+                        } else {
+                            echo "Pronto estaré en contacto!<br><br>";
+                            echo "Su Mensaje se envio correctamente";
+                        }
                     } else {
-                        echo "Pronto estaré en contacto!<br><br>";
-                        echo "Su Mensaje se envio correctamente";
+                        echo "algo salio mal! <br>";
+                        echo "o tú no deberías estar aqui!";
                     }
-                }else{
-                    echo "algo salio mal! <br>";
-                    echo "o tú no deberías estar aqui!";
+                } else {
+                    echo '<p>Your submission attempt has been blocked by anti-spam measures.</p>';
                 }
+
                 ?>
             </p>
         </div><!-- /.col -->

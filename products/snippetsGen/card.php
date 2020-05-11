@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col">
         <div class="ribbon-wrapper ribbon-xl">
           <div class="ribbon bg-warning text-lg">
           new product

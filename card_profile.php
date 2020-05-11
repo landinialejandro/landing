@@ -1,5 +1,5 @@
  <!-- profile -->
- <div class="col-lg-6">
+ <div class="col">
    <!-- Widget: user widget style 1 -->
    <div class="card card-widget widget-user">
      <!-- Add the bg color to the header using any of the bg-* classes -->
@@ -45,6 +45,9 @@
                  <button type="submit" class="btn btn-default"><i class="fas fa-envelope"></i></button>
                </div>
                <input name="profile-mail" id="profile-mail" type="email" class="form-control" placeholder="Your email">
+             </div>
+             <div class="offset-sm-2 col-sm-10">
+               <div class="g-recaptcha" data-sitekey="6Lcji_MUAAAAAKJuHnhzq4KqhcnSLg98U4RCayLD"></div>
              </div>
            </form>
          </div>

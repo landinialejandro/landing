@@ -10,7 +10,7 @@ include("header.php");
           y mucho menos costoso.</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Basado AppGini, herramienta de desarrollo de <a href="https://bigprof.com/" target="_blank">BigProf</a></h1>
+        <h1 class="m-0 text-dark">Desarrollado con AppGini, herramienta de desarrollo de <a href="https://bigprof.com/" target="_blank">BigProf</a></h1>
         <p>La plataforma de desarrollo es mundialmente difundida, cuenta con una comunidad de las miles de personas en todo el mundo.</p>
       </div><!-- /.col -->
 
@@ -22,14 +22,20 @@ include("header.php");
 <div class="content">
   <div class="container">
     <div class="row">
-      <?php
-      include "card_profile.php";
-      include "products/snippetsGen/card.php";
-      include "products/lat/card.php";
-      include "products/erp_sp/card.php";
-      include "products/tnz/card.php";
-      include "products/mpi/card.php";
-      ?>
+      <div class="col-6">
+        <?php
+        include "card_profile.php";
+        include "products/erp_sp/card.php";
+        include "products/tnz/card.php";
+        ?>
+      </div>
+      <div class="col-6">
+        <?php
+        include "products/snippetsGen/card.php";
+        include "products/lat/card.php";
+        include "products/mpi/card.php";
+        ?>
+      </div>
     </div>
   </div>
   <?php

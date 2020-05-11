@@ -20,7 +20,17 @@
   <link rel="stylesheet" href="dist/plugins/ekko-lightbox/ekko-lightbox.css">
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <style>
+    #rc-imageselect,
+    .g-recaptcha {
+      transform: scale(0.77);
+      -webkit-transform: scale(0.77);
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+    }
+  </style>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -103,8 +113,8 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-    <?php
-  $sales = 122;
-  $followers = 96;
-  $products = 8;
-  ?>
+      <?php
+      $sales = 122;
+      $followers = 96;
+      $products = 8;
+      ?>

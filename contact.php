@@ -249,6 +249,10 @@ include("header.php");
                       </div>
                     </div>
                   </div>
+                  <div class="offset-sm-2 col-sm-10">
+                    <div class="g-recaptcha" data-sitekey="6Lcji_MUAAAAAKJuHnhzq4KqhcnSLg98U4RCayLD"></div>
+                  </div>
+                  <br>
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                       <button type="submit" name="contact" class="btn btn-success">Enviar</button>

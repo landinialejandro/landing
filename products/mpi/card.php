@@ -1,5 +1,5 @@
 <!-- mpi -->
-<div class="col-lg-6">
+<div class="col">
         <div class="card card-primary card-outline">
           <div class="card-header">
             <h5 class="card-title m-0">Membership profile image</h5>
