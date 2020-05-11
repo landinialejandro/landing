@@ -152,7 +152,7 @@ if (!$captcha) {
                         $mail->Host       = "rm000235.ferozo.com";                    // Set the SMTP server to send through
                         $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
                         $mail->Username   = "alejandro@landini.com.ar";                     // SMTP username
-                        $mail->Password   = "riKDweIo6nYEGKXTOXUTgQ8d";                               // SMTP password
+                        $mail->Password   = "*txul5J3iP";                               // SMTP password
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
                         $mail->Port       = 465;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
