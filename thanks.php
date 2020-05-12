@@ -11,7 +11,6 @@ require('dist/php/PHPMailer/src/Exception.php');
 require('dist/php/PHPMailer/src/PHPMailer.php');
 require('dist/php/PHPMailer/src/SMTP.php');
 
-
 ?>
 <div class="content-header">
     <div class="container">
@@ -39,7 +38,7 @@ require('dist/php/PHPMailer/src/SMTP.php');
                     echo alerts("danger", " Captcha ERROR!", '<p>Please complete the captcha to submit the form.</p>');
                     exit;
                 } else {
-                    $secretKey = "6Lcji_MUAAAAAIFVloKesM3FvdYcWnlElVU_e2sE";
+                    $secretKey = $captcha_key;
                     $url = 'https://www.google.com/recaptcha/api/siteverify?secret=' . urlencode($secretKey) .  '&response=' . urlencode($captcha);
                     $response = file_get_contents($url);
                     $responseKeys = json_decode($response, true);
@@ -94,7 +93,7 @@ require('dist/php/PHPMailer/src/SMTP.php');
                                 $_mail_body = "El siguiente correo: {$mailto[0]} envió una solicituda de envio de información de: {$prod}";
                             }
                             $mail = new PHPMailer(true);
-                            include('config.php');
+                            
                             //Server settings
                             $mail->isSMTP();                                 // Send using SMTP
                             $mail->Host       = $mail_cfg['Host'];           // Set the SMTP server to send through

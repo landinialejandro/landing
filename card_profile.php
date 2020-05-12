@@ -47,7 +47,7 @@
                <input name="profile-mail" id="profile-mail" type="email" class="form-control" placeholder="Your email">
              </div>
              <div class="offset-sm-2 col-sm-10">
-               <div class="g-recaptcha" data-sitekey="6Lcji_MUAAAAAKJuHnhzq4KqhcnSLg98U4RCayLD"></div>
+               <div class="g-recaptcha" data-sitekey="<?php echo $captcha_html; ?>"></div>
              </div>
            </form>
          </div>

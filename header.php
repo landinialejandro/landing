@@ -115,7 +115,5 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <?php
-      $sales = 122;
-      $followers = 96;
-      $products = 8;
+      include('config.php');
       ?>
