@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="dist/dist/css/adminlte.min.css">
   <link rel="stylesheet" href="dist/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="dist/plugins/ekko-lightbox/ekko-lightbox.css">
+  <link rel="stylesheet" href="dist/dist_L/css/main.css">
 
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <style>
