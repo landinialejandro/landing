@@ -13,7 +13,7 @@
 
             <p class="card-text">
             Agregue dinámicamente desde un formulario sus snippets, cree su propio json para su entorno de trabajo.
-            Copie y pegue un json existente y modifiquelo facilmente desde el editor de objetos.  
+            Copie y pegue un json existente y modifíquelo fácilmente desde el editor de objetos.  
           </div>
           <div class="card-footer">
             <a class="btn btn-app float-left bg-indigo" href="products/snippetsGen/index.php">

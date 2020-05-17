@@ -5,9 +5,9 @@
         <h5 class="card-title">Tu Negocio Web!</h5>
         <br>
         <p class="card-text">
-          Aplicación desarrollada de facturación para argentina, adpatación personalizada para cada tipo de
+          Aplicación desarrollada de facturación para argentina, adaptación personalizada para cada tipo de
           negocio.
-          Vos dedicate a tus negocios, tunegocioweb te hace el resto más fácil. <br>
+          Dedícate a tus negocios, tunegocioweb te hace el resto más fácil. <br>
           Facturación online, control de inventario, de clientes, de proveedores, o simplemente facturas lo
           que necesites.
           Totalmente desarrollada con AppGini.

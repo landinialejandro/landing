@@ -12,7 +12,7 @@
           <div class="card-body">
             <h6 class="card-title">Herramienta para desarrolladores</h6>
 
-            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, practicamente sin
+            <p class="card-text">Diseñada para desarrolladores de AppGini, <strong>plugin ready</strong>, prácticamente sin
               codificar nada, instale, active el plugin y disfrute!</p>
 
             <h3>+<span class="counter" id="counter-lat" data-startcountvalue="3600" data-endcountvalue="3801">0</span> visitas!</h3>
