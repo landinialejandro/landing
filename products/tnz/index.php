@@ -23,7 +23,7 @@ include("../header.php");
         <br>
         <ul>
             <li>
-                <h3>Solicita un destración totalmente gratis por 15 días</h3>
+                <h3>Solicita un demostración totalmente gratis por 15 días</h3>
             </li>
             <li>
                 <h3>Usa mi servidor o instala el tuyo</h3>
