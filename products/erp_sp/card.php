@@ -13,6 +13,9 @@
        </p>
      </div>
      <div class="card-footer">
+       <a class="btn btn-app float-left bg-indigo" href="products/erp_sp/index.php">
+              <i class="fas fa-plus"></i> Información
+            </a>
        <form id="sistema-plus" novalidate="novalidate" method="POST" action="thanks.php">
          <div class="input-group mb-3">
            <div class="input-group-prepend">

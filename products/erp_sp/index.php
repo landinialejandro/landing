@@ -34,5 +34,6 @@ include("../header.php");
 
 </div>
 <?php
+$sales=true;
 include("../footer.php");
 ?>

@@ -3,10 +3,11 @@ include("../header.php");
 ?>
 <div class="col-md-4 title-panel">
     <div class="card card-body bg-light" id="google_translate_element"></div>
+    <a href="<?php echo $home; ?>"><i class="fas fa-home"></i></a>
     <div class="title-text-panel">
-        <h1><a href="<?php echo $home; ?>">Tu Página WEB!</a></h1>
+        <h1><a href="#">Tu Página WEB!</a></h1>
         <p>
-            Tu Página WEB!<br>
+            Descubre un nuevo potencial!<br>
         </p>
     </div>
     <div>
