@@ -26,6 +26,7 @@ include("header.php");
       <div class="col-12 col-md-6">
         <?php
         include "card_profile.php";
+        include "products/wp/card.php";
         include "products/erp_sp/card.php";
         include "products/tnz/card.php";
         ?>

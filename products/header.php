@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../dist/dist/css/adminlte.css">
     <link rel="stylesheet" href="../../dist/dist_L/css/main.css">
     <link rel="stylesheet" href="../../dist/plugins/ekko-lightbox/ekko-lightbox.css">
+    <link rel="stylesheet" href="../../dist/plugins/fontawesome-free/css/all.min.css">
 
     <link id="browser_favicon" rel="shortcut icon" href="../../logo.png">
 
