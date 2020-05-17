@@ -1,6 +1,3 @@
-<div>
-    <div class="card card-body bg-light" id="google_translate_element"></div>
-</div>
 <h2>Sobre el desarrollo</h2>
 <p>
 <h3>Desarrollo y mantenimiento de la aplicación</h3> <br>

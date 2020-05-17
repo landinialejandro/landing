@@ -1,20 +1,17 @@
-<div class="col-md-4 involve-panel">
-    <?php
+    <div class="col-md-4 involve-panel">
+      <?php
       if (!isset($sales)) $sales = false;
-      if ($sales){
+      if ($sales) {
         include("sales_panel.php");
-      }
-      else{
+      } else {
         include("free_panel.php");
       }
-    ?>
-                
-
-        </div>
+      ?>
     </div>
+  </div>
 </body>
 <script>
-  $(function () {
+  $(function() {
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
       event.preventDefault();
       $(this).ekkoLightbox({
@@ -28,4 +25,5 @@
     });
   })
 </script>
+
 </html>

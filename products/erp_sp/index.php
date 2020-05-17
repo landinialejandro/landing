@@ -1,8 +1,8 @@
 <?php
 include("../header.php");
 ?>
-
 <div class="col-md-4 title-panel">
+    <div class="card card-body bg-light" id="google_translate_element"></div>
     <div class="title-text-panel">
         <h1><a href="<?php echo $home; ?>">LANDINI</a></h1>
         <p>
