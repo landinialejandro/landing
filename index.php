@@ -28,7 +28,6 @@ include("header.php");
         include "card_profile.php";
         include "products/wp/card.php";
         include "products/erp_sp/card.php";
-        include "products/tnz/card.php";
         ?>
       </div>
       <div class="col-12 col-md-6">
@@ -36,6 +35,7 @@ include("header.php");
         include "products/snippetsGen/card.php";
         include "products/lat/card.php";
         include "products/mpi/card.php";
+        include "products/tnz/card.php";
         ?>
       </div>
     </div>

@@ -16,7 +16,7 @@
             <ul>
                 <li>PRESENCIA</li>
                 <li>NEGOCIO</li>
-                <li>TIENDA ONLILNE</li>
+                <li>TIENDA ONLINE</li>
             </ul>
 
           </div>
