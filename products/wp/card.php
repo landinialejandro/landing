@@ -13,11 +13,9 @@
             <h6 class="card-title">Obtén tu página personal ahora!</h6>
 
             <p class="card-text">Lo hago por ti!, accede a la página web que tu proyecto necesita.</p>
-            <ul>
-                <li>PRESENCIA</li>
-                <li>NEGOCIO</li>
-                <li>TIENDA ONLINE</li>
-            </ul>
+                <div class="callout callout-info"><h5 style="background: #21B8FF; color:white;">PRESENCIA</h5></div>
+                <div class="callout callout-warning"><h5>NEGOCIO</h5></div>
+                <div class="callout callout-success"><h5>TIENDA ONLINE</h5></div>
 
           </div>
           <div class="card-footer">
