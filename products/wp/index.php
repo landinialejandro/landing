@@ -21,14 +21,20 @@ include("../header.php");
 
     <p class="card-text">Lo hago por ti!, accede a la página web que tu proyecto necesita.
         <ul>
-            <li><h3>PRESENCIA</h3>
+            <li><div class="rounded" style="background: #21B8FF; color:white; padding: 10px">
+                <h3>PRESENCIA</h3>
                 <p>Consigue presencia profesional en Internet. <br>Genera nuevos contactos.</p>
+                </div>
             </li>
-            <li><h3>NEGOCIO</h3>
+            <li><div class="rounded" style="background: #FF7719; color:white; padding: 10px">
+                <h3>NEGOCIO</h3>
                 <p>Tu empresa en nuevos mercados con un sitio web completo y eficaz.</p>
+                </div>
             </li>
-            <li><h3>TIENDA ONLINE</h3>
+            <li><div class="rounded" style="background: #9B1D9A;color:white; padding: 10px">
+                <h3>TIENDA ONLINE</h3>
                 <p>Incrementa tus ventas con una tienda online <br>Llega a más clientes.</p>
+                </div>
             </li>
         </ul>
     </p>
