@@ -14,8 +14,6 @@
   <!-- ./wrapper -->
 
   <!-- REQUIRED SCRIPTS -->
-
-  <!-- jQuery -->
   <script src="dist/plugins/jquery/jquery.min.js"></script>
   <script src="dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="dist/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -25,7 +23,6 @@
   <script src="dist/plugins/filterizr/jquery.filterizr.min.js"></script>
   <script src="dist/dist_L/TweenMax/TweenMax.min.js"></script>
   <script src="dist/dist_L/makecounter/makecounter.min.js"></script>
-  
 
   <script>
   $(function () {

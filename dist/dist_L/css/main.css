@@ -83,7 +83,7 @@ div.feature-panel {
     overflow: hidden;
 }
 
-.feature-panel>ul {
+.feature-panel > ul {
     display: inline-block;
     text-align: left;
     padding: 0;
@@ -150,4 +150,49 @@ div.involve-panel {
 
 .l-divider.l-divider-light .l-divider-icon {
     color: #fff !important;
+}
+
+/* sales bloque */
+
+.lite-bloque{
+    background: #21B8FF;
+    color: white;
+    padding: 10px
+}
+
+.lite-bloque ul li i {
+    color: #21B8FF;
+    vertical-align: middle;
+    padding: 7px;
+}
+
+.plus-bloque{
+    background: #FF7719;
+    color: white;
+    padding: 10px
+}
+
+.plus-bloque ul li i {
+    color: #FF7719;
+    vertical-align: middle;
+    padding: 7px;
+}
+
+.full-bloque{
+    background: #9B1D9A;
+    color: white;
+    padding: 10px
+}
+.full-bloque ul li i {
+    color: #9B1D9A;
+    vertical-align: middle;
+    padding: 7px;
+}
+
+.lite-bloque > ul, .plus-bloque > ul, .full-bloque > ul {
+    background: white;
+    border: solid;
+    border-width: 1px;
+    color: #5e5e5e;
+    list-style:none;
 }
