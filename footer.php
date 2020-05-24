@@ -21,8 +21,8 @@
   <script src="dist/dist/js/adminlte.min.js"></script>
   <script src="dist/plugins/jquery-validation/jquery.validate.js"></script>
   <script src="dist/plugins/filterizr/jquery.filterizr.min.js"></script>
-  <script src="dist/dist_L/TweenMax/TweenMax.min.js"></script>
-  <script src="dist/dist_L/makecounter/makecounter.min.js"></script>
+  <script src="dist/dist_L/plugins/TweenMax/TweenMax.min.js"></script>
+  <script src="dist/dist_L/plugins/makecounter/makecounter.min.js"></script>
 
   <script>
   $(function () {
