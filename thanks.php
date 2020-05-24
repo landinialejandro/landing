@@ -1,5 +1,4 @@
 <?php
-$CHARSET = "UTF-8";
 include("header.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -44,7 +43,7 @@ require('dist/php/PHPMailer/src/SMTP.php');
                         if (!empty($_POST)) {
                             SendingMail($mail_cfg);
                         } else {
-                            $msg = "algo salio mal! <br>";
+                            $msg = "Algo salio mal! <br>";
                             $msg .= "o tú no deberías estar aqui!";
                             $class = 'warning';
                             $title = "Upsss!";
@@ -101,18 +100,17 @@ function alerts($class, $title, $msg = "", $ico = "fa-exclamation-triangle")
  * @return string html mail string
  * 
  */
+
 function mails($template, $post)
 {
-
-    $template_file = is_file("templates/{$template}.html");
-    $_mail = @file_get_contents($template_file);
-    $_mail = str_replace('{%%NAME%%}', $post['name'], $_mail);
-    $_mail = str_replace('{%%LASTNAME%%}', $post['lastname'], $_mail);
-    $_mail = str_replace('{%%COMMENTS%%}', $post['comments'], $_mail);
-    $_mail = str_replace('{%%COMPANY%%}', $post['company'], $_mail);
-    $_mail = str_replace('{%%POSITION%%}', $post['position'], $_mail);
-    $_mail = str_replace('{%%PRODUCT%%}', $post['product'], $_mail);
-    $_mail = str_replace('{%%MAILTO%%}', $post['mailto'], $_mail);
+    $_mail = @file_get_contents("templates/{$template}.html");
+    if (isset($post['name'])) $_mail = str_replace('{%%NAME%%}', makeSafe($post['name']), $_mail);
+    if (isset($post['lastname'])) $_mail = str_replace('{%%LASTNAME%%}', makeSafe($post['lastname']), $_mail);
+    if (isset($post['comments'])) $_mail = str_replace('{%%COMMENTS%%}', makeSafe($post['comments']), $_mail);
+    if (isset($post['company'])) $_mail = str_replace('{%%COMPANY%%}', makeSafe($post['company']), $_mail);
+    if (isset($post['position'])) $_mail = str_replace('{%%POSITION%%}', makeSafe($post['position']), $_mail);
+    if (isset($post['product'])) $_mail = str_replace('{%%PRODUCT%%}', makeSafe($post['product']), $_mail);
+    if (isset($post['mail'])) $_mail = str_replace('{%%MAILTO%%}', makeSafe($post['mail']), $_mail);
 
     return $_mail;
 }
@@ -122,15 +120,15 @@ function mails($template, $post)
  * 
  * @param array $mail_cfg config mail array
  * 
- * @return string html mail string
+ * @return string empty
  * 
  */
 
 function SendingMail($mail_cfg)
 {
     $post = $_POST;
-    $mailto[0] = $post['mail'];
     if (isset($post['contact'])) {
+        //$mailto[0] = $post['mail'];
         $post['product'] = "Contact form";
         $_mail = mails('contactmail', $post);
         $_mail_body = "Hola!: el siguiente correo {$post['mail']} envió tus datos de contacto! en breve me comunico contigo! Saludos! Alejandro ";
@@ -139,6 +137,7 @@ function SendingMail($mail_cfg)
             $producto[] = $key;
             $mailto[] = $value;
         }
+        $post['mail'] = $mailto[0] ;
         $post['product'] = str_replace("-", " ",  $producto[0]);
         $_mail =  mails('productmail', $post);
         $_mail_body = "El siguiente correo: {$post['mail']} envió una solicituda de envio de información de: {$post['product']}";
@@ -152,11 +151,13 @@ function SendingMail($mail_cfg)
     $mail->Username   = $mail_cfg['Username'];       // SMTP username
     $mail->Password   = $mail_cfg['Password'];       // SMTP password
     $mail->Port       = $mail_cfg['Port'];           // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+    $mail->CharSet    = 'utf-8';
+    $mail->Encoding   = 'base64';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
 
     //Recipients
     $mail->setFrom($mail_cfg['Username'], 'Alejandro Landini');
-    $mail->addAddress($mailto[0]);     // Add a recipient
+    $mail->addAddress($post['mail']);     // Add a recipient
     $mail->addBCC($mail_cfg['addBCC']);
     $mail->addBCC($mail_cfg['Username']);
 
@@ -176,17 +177,48 @@ function SendingMail($mail_cfg)
         $intentos = $intentos + 1;
     }
     if (!$exito) {
-        $msg = "Problemas enviando correo electrónico a " . $mailto[0];
+        $msg = "Problemas enviando correo electrónico a " . $post['mail'];
         $msg .= "<br>" . $mail->ErrorInfo;
         $class = 'warning';
         $title = "Send ERROR!!";
     } else {
         $msg = "Pronto estaré en contacto!<br><br>";
-        $msg .= "Su Mensaje se envio correctamente";
+        $msg .= "Su Mensaje se envió correctamente";
         $class = 'success';
         $title = "Exito!";
         $ico = "fa-check";
     }
     echo alerts($class, $title, $msg, $ico);
     return;
+}
+
+/**
+ * makeSafe string control
+ * 
+ * @param array $string to safe
+ * 
+ * @return string $string or error
+ * 
+ */
+
+function makeSafe($string){
+
+    // prevent double escaping
+    $na = explode(',', "\x00,\n,\r,',\",\x1a");
+    $escaped = true;
+    $nosc = true; // no special chars exist
+    foreach($na as $ns){
+        $dan = substr_count($string, $ns);
+        $esdan = substr_count($string, "\\{$ns}");
+        if($dan != $esdan) $escaped = false;
+        if($dan) $nosc = false;
+    }
+    if($nosc){
+        // find unescaped \
+        $dan = substr_count($string, '\\');
+        $esdan = substr_count($string, '\\\\');
+        if($dan != $esdan * 2) $escaped = false;
+    }
+
+    return ($escaped ? $string : "ERROR SAFE STRING");
 }
