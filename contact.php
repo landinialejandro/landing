@@ -1,7 +1,6 @@
 <?php
 include("header.php");
 ?>
-<!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -15,26 +14,19 @@ include("header.php");
         </ol>
       </div>
     </div>
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
-
-<!-- Main content -->
 <section class="content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
-
-        <!-- Profile Image -->
         <div class="card card-primary card-outline">
           <div class="card-body box-profile">
             <div class="text-center">
               <img class="profile-user-img img-fluid img-circle" src="dist/dist_L/logo/Face.png" alt="User Avatar">
             </div>
-
             <h3 class="profile-username text-center">Alejandro Landini</h3>
-
             <p class="text-muted text-center">Desarrollador de Software</p>
-
             <ul class="list-group list-group-unbordered mb-3">
               <li class="list-group-item">
                 <b>Productos</b> <a class="float-right"><?php echo $products; ?></a>
@@ -46,18 +38,12 @@ include("header.php");
                 <b>Ventas</b> <a class="float-right"><?php echo $sales; ?></a>
               </li>
             </ul>
-
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
-
-        <!-- About Me Box -->
         <div class="card card-primary">
           <div class="card-header">
             <h3 class="card-title">Acerca de mi</h3>
           </div>
-          <!-- /.card-header -->
           <div class="card-body">
             <strong><i class="fas fa-book mr-1"></i> Educación</strong>
 
@@ -65,19 +51,13 @@ include("header.php");
               Tecnico Electromecánico, Programdor en PHP, JS y CSS. <br>
               Visual Basic, C, SQL.
             </p>
-
             <hr>
-
             <strong><i class="fas fa-map-marker-alt mr-1"></i> Ubicación</strong>
-
             <p class="text-muted">Cipolletti, Río Negro, AR</p>
             <a href="mailto:alejandro@landini.com.ar">alejandro@landini.com.ar</a>
             <a href="mailto:landinialejandro@gmail.com">landinialejandro@gmail.com</a>
-
             <hr>
-
             <strong><i class="fas fa-pencil-alt mr-1"></i> Habilidades</strong>
-
             <p class="text-muted">
               <span class="badge badge-danger">Diseño de UI</span>
               <span class="badge badge-success">Ingeniería inversa</span>
@@ -85,18 +65,12 @@ include("header.php");
               <span class="badge badge-warning">PHP</span>
               <span class="badge badge-primary">Node.js</span>
             </p>
-
             <hr>
-
             <strong><i class="far fa-file-alt mr-1"></i> Notas</strong>
-
             <p class="text-muted">Gracias por elegir mis productos y servicios!.</p>
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
       </div>
-      <!-- /.col -->
       <div class="col-md-9">
         <div class="card">
           <div class="card-header p-2">
@@ -104,11 +78,10 @@ include("header.php");
               <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Actividades</a></li>
               <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Contacto!</a></li>
             </ul>
-          </div><!-- /.card-header -->
+          </div>
           <div class="card-body">
             <div class="tab-content">
               <div class="active tab-pane" id="activity">
-                <!-- Post -->
                 <div class="post">
                   <div class="user-block">
                     <img class="img-circle img-bordered-sm" src="img/ecm.jpg" alt="user image">
@@ -118,13 +91,12 @@ include("header.php");
                     </span>
                     <span class="description">México, Ciudad de México</span>
                   </div>
-                  <!-- /.user-block -->
                   <p>
-                  Grupo Empresarial Tecnológico SA de CV <br>
-                  Director General <br>
-                  Alejando es un profesional  con una gran capacidad técnica y siempre dispuesto a ayudar. Gracias a su valioso apoyo he podido resolver múltiples problemas. <br>
-                  En verdad tiene pasión y vocación humanista y de ayuda al prójimo. <br>
-                  Siempre confió en sus recomendaciones y soluciones y me siento desde México con la seguridad que cuento con un aliado desde Argentina, un abrazo Alex
+                    Grupo Empresarial Tecnológico SA de CV <br>
+                    Director General <br>
+                    Alejando es un profesional con una gran capacidad técnica y siempre dispuesto a ayudar. Gracias a su valioso apoyo he podido resolver múltiples problemas. <br>
+                    En verdad tiene pasión y vocación humanista y de ayuda al prójimo. <br>
+                    Siempre confió en sus recomendaciones y soluciones y me siento desde México con la seguridad que cuento con un aliado desde Argentina, un abrazo Alex
                   </p>
 
                   <p>
@@ -139,9 +111,6 @@ include("header.php");
 
                   <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
                 </div>
-                <!-- /.post -->
-
-                <!-- Post -->
                 <div class="post">
                   <div class="user-block">
                     <img class="img-circle img-bordered-sm" src="img/my.jpg" alt="User Image">
@@ -151,13 +120,12 @@ include("header.php");
                     </span>
                     <span class="description">Mauritania</span>
                   </div>
-                  <!-- /.user-block -->
                   <p>
-                  Mauritanian domain name '.MR' Registrar <br>
-                  Freelancer <br>
-                  When I start using AppGini, my first need was to find AdminLTE theme and support. Alejandro plugin was the fisrt and the only one I try and use for my projects till now.
-                  After couple months, I have the honnor to discuss with him in WhatsApp, I can't tell you the feeling ...
-                  The only thing I can say is 'this man is a great guy', not only for his talent on coding, but just as human.
+                    Mauritanian domain name '.MR' Registrar <br>
+                    Freelancer <br>
+                    When I start using AppGini, my first need was to find AdminLTE theme and support. Alejandro plugin was the fisrt and the only one I try and use for my projects till now.
+                    After couple months, I have the honnor to discuss with him in WhatsApp, I can't tell you the feeling ...
+                    The only thing I can say is 'this man is a great guy', not only for his talent on coding, but just as human.
                   </p>
                   <p>
                     <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
@@ -170,7 +138,6 @@ include("header.php");
                   </p>
                   <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
                 </div>
-                <!-- /.post -->
                 <div class="post">
                   <div class="user-block">
                     <img class="img-circle img-bordered-sm" src="img/rg.jpeg" alt="User Image">
@@ -180,13 +147,12 @@ include("header.php");
                     </span>
                     <span class="description">Kenya</span>
                   </div>
-                  <!-- /.user-block -->
                   <p>
-                  Software developer <br>
-                  Freelancer <br>
-                  Alejandro is a committed and enthusiastic software developer. 
-                  He has a keen interest on delivering the best services, 
-                  I have used some of his open source products and I can attest he's simply the best.
+                    Software developer <br>
+                    Freelancer <br>
+                    Alejandro is a committed and enthusiastic software developer.
+                    He has a keen interest on delivering the best services,
+                    I have used some of his open source products and I can attest he's simply the best.
                   </p>
                   <p>
                     <a href="#" class="link-black text-sm mr-2"><i class="fas fa-share mr-1"></i> Share</a>
@@ -199,9 +165,7 @@ include("header.php");
                   </p>
                   <input class="form-control form-control-sm" type="text" placeholder="Type a comment">
                 </div>
-                <!-- /.post -->
               </div>
-              <!-- /.tab-pane -->
               <div class="tab-pane" id="settings">
                 <form id="contactform" class="form-horizontal" action="thanks.php" novalidate="novalidate" method="POST">
                   <div class="form-group row">
@@ -260,63 +224,56 @@ include("header.php");
                   </div>
                 </form>
               </div>
-              <!-- /.tab-pane -->
             </div>
-            <!-- /.tab-content -->
-          </div><!-- /.card-body -->
+          </div>
         </div>
-        <!-- /.nav-tabs-custom -->
       </div>
-      <!-- /.col -->
     </div>
-    <!-- /.row -->
-  </div><!-- /.container-fluid -->
+  </div>
 </section>
-<!-- /.content -->
-
 
 <?php
 include("footer.php");
 ?>
 <script type="text/javascript">
-$(document).ready(function () {
-  $("#contactform").validate({
-    rules: {
-      mail: {
-        required: true,
-        email: true,
+  $(document).ready(function() {
+    $("#contactform").validate({
+      rules: {
+        mail: {
+          required: true,
+          email: true,
+        },
+        notify: {
+          required: true
+        },
+        name: {
+          required: true
+        },
+        company: {
+          required: true
+        },
+        comments: {
+          required: true
+        }
       },
-      notify: {
-        required: true
+      messages: {
+        email: {
+          required: "Please enter a email address",
+          email: "Please enter a vaild email address"
+        },
+        terms: "Please accept receive my emails!"
       },
-      name: {
-        required: true
+      errorElement: 'span',
+      errorPlacement: function(error, element) {
+        error.addClass('invalid-feedback');
+        element.closest('.form-group').append(error);
       },
-      company: {
-        required: true
+      highlight: function(element, errorClass, validClass) {
+        $(element).addClass('is-invalid');
       },
-      comments: {
-        required: true
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).removeClass('is-invalid');
       }
-    },
-    messages: {
-      email: {
-        required: "Please enter a email address",
-        email: "Please enter a vaild email address"
-      },
-      terms: "Please accept receive my emails!"
-    },
-    errorElement: 'span',
-    errorPlacement: function (error, element) {
-      error.addClass('invalid-feedback');
-      element.closest('.form-group').append(error);
-    },
-    highlight: function (element, errorClass, validClass) {
-      $(element).addClass('is-invalid');
-    },
-    unhighlight: function (element, errorClass, validClass) {
-      $(element).removeClass('is-invalid');
-    }
+    });
   });
-});
 </script>

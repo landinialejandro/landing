@@ -1,25 +1,21 @@
 <?php
 include("header.php");
 ?>
-<!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container">
     <div class="row mb-2">
       <div class="col-12 col-md-6">
         <h1 class="m-0 text-dark">Desarrollo de aplicaciones web optimizadas para dispositivos móviles, más rápido
           y mucho menos costoso.</h1>
-      </div><!-- /.col -->
+      </div>
       <div class="col-12 col-md-6">
         <h1 class="m-0 text-dark">Desarrollado con AppGini, herramienta de <a href="https://bigprof.com/" target="_blank">BigProf</a></h1>
         <p>La plataforma de desarrollo es mundialmente difundida, cuenta con una comunidad de miles de personas en todo el mundo.</p>
         <p>Potenciado con AdminLTE, generando Experiencias de usuarios increíbles!.</p>
-      </div><!-- /.col -->
-
-    </div><!-- /.row -->
-  </div><!-- /.container-fluid -->
+      </div>
+    </div>
+  </div>
 </div>
-<!-- /.content-header -->
-<!-- Main content -->
 <div class="content">
   <div class="container">
     <div class="row">

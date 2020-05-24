@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +71,6 @@
         </button>
 
         <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-          <!-- Left navbar links -->
           <ul class="navbar-nav">
             <li class="nav-item">
               <a href="index.php" class="nav-link">Home</a>
@@ -87,10 +85,7 @@
                 <li><a href="products/snippetsGen/index.php" class="dropdown-item">Snippet Generator </a></li>
                 <li><a href="products/mpi/index.php" class="dropdown-item">Profile Image </a></li>
                 <li><a href="products/tnz/index.php" class="dropdown-item">Tu Negocio web! </a></li>
-
                 <li class="dropdown-divider"></li>
-
-                <!-- Level two dropdown-->
                 <li class="dropdown-submenu dropdown-hover">
                   <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">otros proyectos</a>
                   <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
@@ -106,24 +101,18 @@
                     </li>
                   </ul>
                 </li>
-                <!-- End Level two -->
                 <li class="dropdown-divider"></li>
                 <li><a href="products/erp_sp/index.php" class="dropdown-item">Sistema Plus!</a></li>
               </ul>
             </li>
           </ul>
-          <!-- Right navbar links -->
           <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-            <!-- Notifications Dropdown Menu -->
             <li class="nav-item">
               <div id="google_translate_element"></div>
             </li>
           </ul>
         </div>
     </nav>
-    <!-- /.navbar -->
-
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <?php
       include('config.php');

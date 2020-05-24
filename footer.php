@@ -1,19 +1,14 @@
-</div>
+    </div>
     <!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
     <footer class="main-footer">
-      <!-- To the right -->
       <div class="float-right d-none d-sm-inline">
           <strong> Potenciado por: <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
         </div>
         Anything you want
-      <!-- Default to the left -->
     </footer>
   </div>
   <!-- ./wrapper -->
 
-  <!-- REQUIRED SCRIPTS -->
   <script src="dist/plugins/jquery/jquery.min.js"></script>
   <script src="dist/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="dist/plugins/jquery-ui/jquery-ui.min.js"></script>
