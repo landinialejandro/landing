@@ -116,7 +116,7 @@ function mails($template, $post)
 }
 
 /**
- * Sendign mail control
+ * Sending mail control
  * 
  * @param array $mail_cfg config mail array
  * 
