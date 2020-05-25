@@ -67,6 +67,13 @@
 
     gtag('config', 'AW-1064627938');
   </script>
+  <!-- Event snippet for Website traffic conversion page -->
+  <script>
+    gtag('event', 'conversion', {
+      'send_to': 'AW-1064627938/I7VUCPqXrtEBEOLd0_sD'
+    });
+  </script>
+
 </head>
 
 <body class="hold-transition layout-top-nav">
