@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <script data-ad-client="ca-pub-9986737030473666" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <meta charset="utf-8">
@@ -16,7 +17,10 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85010303-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() {dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
     gtag('config', 'UA-85010303-2');
   </script>
@@ -50,6 +54,18 @@
         autoDisplay: false
       }, 'google_translate_element');
     }
+  </script>
+  <!-- Global site tag (gtag.js) - Google Ads: 1064627938 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1064627938"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-1064627938');
   </script>
 </head>
 

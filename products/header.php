@@ -34,13 +34,24 @@
             }, 'google_translate_element');
         }
     </script>
+    <!-- Global site tag (gtag.js) - Google Ads: 1064627938 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1064627938"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-1064627938');
+    </script>
 </head>
 
-<body>  
+<body>
     <div>
         <div class="row">
-            
-<?php 
-$home = "../../index.php";
-$logo = "../../dist/dist_L/logo/L3.png";
-?>
+
+            <?php
+            $home = "../../index.php";
+            $logo = "../../dist/dist_L/logo/L3.png";
+            ?>
